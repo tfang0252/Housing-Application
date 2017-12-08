@@ -41,7 +41,6 @@ import java.awt.event.ActionEvent;
 public class LoginScreen extends AppWindowPanel{
 	private JTextField SID;
 	private JPasswordField PW;
-	//private HashMap <String,String> userList=new HashMap<String,String>();
 	
 	private boolean userFound;
 	private boolean pwFound;
@@ -140,7 +139,6 @@ public class LoginScreen extends AppWindowPanel{
 		confirm.setFont(new Font("Arial Black", Font.PLAIN, 16));
 		confirm.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0){		
-				//appendToFile();
 				readFile();
 				Set set = userList.entrySet();
 				Iterator iterator = set.iterator();
@@ -207,9 +205,7 @@ public class LoginScreen extends AppWindowPanel{
 			System.exit(1);
 		}
 		try{
-			while((line=input.nextLine())!=null){
-				//System.out.println(line);
-				
+			while((line=input.nextLine())!=null){		
 				uData= new StringTokenizer(line, ":");
 				String user = uData.nextToken();
 				String pw = uData.nextToken();
@@ -237,10 +233,7 @@ public class LoginScreen extends AppWindowPanel{
 		}
 		catch(IOException e){
 			System.out.println("No file found");
-		}
-		
-		
-		
+		}	
 	}
 
 }

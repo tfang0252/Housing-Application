@@ -45,11 +45,7 @@ public class Student {
 	}
 	public String toString(){
 		String studInfo = firstName + " " + lastName + "\n" + 
-				dBirth + "\n" + gender +"\n"+ gradYear+"\n"+dorm;
-		
-		
-		
-		
+				dBirth + "\n" + gender +"\n"+ gradYear+"\n"+dorm;	
 		return studInfo;
 	}
 }

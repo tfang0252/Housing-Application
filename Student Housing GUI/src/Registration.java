@@ -28,11 +28,6 @@ import javax.swing.JTextField;
 
 public class Registration extends MainScreen{
 	
-	//private HashMap <String,String> userList=new HashMap<String,String>();
-	//private HashMap <String, Student> studentData =new HashMap<String, Student>();
-	//Student currentStudent;
-	Scanner input;
-	
 	private String gend;
 	private JTextField userID;
 	private JPasswordField PW;
@@ -158,6 +153,7 @@ public class Registration extends MainScreen{
 					JOptionPane.showMessageDialog(window, "Password field cannot be blank.");
 				}
 				else{
+					currentID = userID.getText();
 					buildUserFile();
 					if(male.isSelected()){
 						gend = "Male";
@@ -171,7 +167,7 @@ public class Registration extends MainScreen{
 					createStudentFile(currentStudent);
 					JOptionPane.showMessageDialog(window, "Registration Complete!");
 					window.getContentPane().removeAll();
-					//window.getContentPane().add(new ProfileScreen(window));
+					window.getContentPane().add(new ProfileScreen(window));
 					window.pack();
 					window.getContentPane().setVisible(true);
 					
@@ -220,30 +216,7 @@ public class Registration extends MainScreen{
 		}
 		catch(IOException e){
 			System.out.println("No file found");
-		}
-		
-		
-		
-	}
-
-	public void createStudent(){
-		String line;
-		StringTokenizer uData;
-		currentStudent = new Student(userID.getText(), PW.getText(),
-				fNameField.getText(), rNameField.getText(), DOB.getText(),
-				Integer.valueOf(gradYear.getText()), gend, dorm.getSelectedItem().toString());
-		/*
-		while((line=input.nextLine())!=null){
-			uData = new StringTokenizer(line,":");
-			String user = uData.nextToken();
-		
-			studentData.put(userID.getText(),  new Student(userID.getText(), PW.getText(),
-				fNameField.getText(), rNameField.getText(), DOB.getText(),
-				Integer.valueOf(gradYear.getText()), gend, dorm.getSelectedItem().toString()));
-				*/
-	
-		//createStudentFile(currentStudent);
-		
+		}	
 	}
 	
 	public void createStudentFile(Student stud){
@@ -263,34 +236,4 @@ public class Registration extends MainScreen{
 			System.out.println("No file found");
 		}
 	}
-	
-	/*
-	public void readFile(){
-		//userFound = false;
-		//pwFound = false;
-		String line = "";
-		StringTokenizer uData;
-		
-		try{
-			input=new Scanner(new File("StudentData.txt"));
-		}
-		catch(FileNotFoundException e){
-			System.out.println("Error opening file..");
-			System.exit(1);
-		}
-		try{
-			while((line=input.nextLine())!=null){
-				//System.out.println(line);
-				
-				uData= new StringTokenizer(line, ":");
-				
-				String pw = uData.nextToken();
-				userList.put(user, pw);				
-			}
-			
-		}
-		catch(NoSuchElementException e){
-			
-		}
-	} */
 }

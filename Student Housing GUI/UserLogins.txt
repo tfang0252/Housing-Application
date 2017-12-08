@@ -1,4 +1,0 @@
-a@gmail.com:Mutchi01
-b@gmail.com:Mutchi02
-c@gmail.com:Mutchi03
-d@gmail.com:Mutchi04

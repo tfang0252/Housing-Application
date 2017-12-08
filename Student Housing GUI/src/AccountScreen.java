@@ -196,22 +196,8 @@ public class AccountScreen extends MainScreen{
 		
 		revalidate();
 	}
-	
-	/*
+
 	public void readFile(){
-		StringTokenizer st;
-		Set set = studentData.entrySet();
-		Iterator iterator = set.iterator();
-		while(iterator.hasNext()) {
-			Map.Entry entry = (Map.Entry)iterator.next();
-			
-			
-		}
-	} */
-	
-	public void readFile(){
-		//userFound = false;
-		//pwFound = false;
 		String line = "";
 		StringTokenizer uData;
 		
@@ -223,9 +209,7 @@ public class AccountScreen extends MainScreen{
 			System.exit(1);
 		}
 		try{
-			while((line=input.nextLine())!=null){
-				//System.out.println(line);
-				
+			while((line=input.nextLine())!=null){			
 				uData= new StringTokenizer(line, ":");
 				String tempUser = uData.nextToken();
 				String tempPW = uData.nextToken();
@@ -237,20 +221,10 @@ public class AccountScreen extends MainScreen{
 				String tempDorm = uData.nextToken();
 				Student tempStud = new Student(tempUser,tempPW,tempFName,tempLName,
 						tempDOB,tempGradYear,tempGender,tempDorm);
-				studentData.put(tempUser, tempStud);	
-				/*
-				System.out.println(tempFName);
-				System.out.println(tempLName);
-				System.out.println(tempDOB);
-				System.out.println(studentData.size());
-				*/
-				
-			}
-		
-			
+				studentData.put(tempUser, tempStud);					
+			}			
 		}
-		catch(NoSuchElementException e){
-			
+		catch(NoSuchElementException e){		
 		}
 	}
 }

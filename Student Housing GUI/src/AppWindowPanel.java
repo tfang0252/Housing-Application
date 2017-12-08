@@ -19,8 +19,6 @@ public class AppWindowPanel extends JPanel{
 	public AppWindowPanel(){
 		setLayout(null);
 		setPreferredSize(new Dimension(1000, 665));
-		setVisible(true);
-		
-		
+		setVisible(true);	
 	}
 }

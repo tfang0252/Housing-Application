@@ -46,15 +46,10 @@ public class AppWindow extends JFrame {
 	
 		//frame ,
 		getContentPane().removeAll();
-		getContentPane().add(new LoginScreen(frame));
+		getContentPane().add(new StudentHousing(frame));
 		pack();
 		getContentPane().setVisible(true);	
 		
-		//Student stud = new Student("Ritchi", "Joseph", new Date(11,29,1996),
-			//new Address("4113 4th ST SW, Lehigh Acres, FL 33976"));
-		
-		//System.out.println(stud);
-				
 	}
 
 }

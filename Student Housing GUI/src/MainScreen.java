@@ -180,7 +180,7 @@ public class MainScreen extends AppWindowPanel{
 		});	
 		
 		//this is where additional JPanel classes should be instantiated
-		//depending omn the range clicked by the user.
+		//depending on the range clicked by the user.
 		window.addMouseListener(new MouseListener(){
 			@Override
 			public void mouseClicked(MouseEvent e) {
