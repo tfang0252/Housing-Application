@@ -22,7 +22,27 @@ public class Student {
 		gender = gend;
 		dorm = dor;
 	}
-	
+	public String getPW(){
+		return PW;
+	}
+	public String getFirstName(){
+		return firstName;
+	}
+	public String getLastName(){
+		return lastName;
+	}
+	public String getGender(){
+		return gender;
+	}
+	public int getGradYear(){
+		return gradYear;
+	}
+	public String getDOB(){
+		return dBirth;
+	}
+	public String getDorm(){
+		return dorm;
+	}
 	public String toString(){
 		String studInfo = firstName + " " + lastName + "\n" + 
 				dBirth + "\n" + gender +"\n"+ gradYear+"\n"+dorm;

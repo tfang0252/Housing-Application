@@ -212,6 +212,12 @@ public class MainScreen extends AppWindowPanel{
 					window.pack();
 					window.getContentPane().setVisible(true);
 				}
+				if((e.getX()>50 && e.getX()<195) && (e.getY()>290 && e.getY()<320)){
+					window.getContentPane().removeAll();
+					window.getContentPane().add(new AccountScreen(window));
+					window.pack();
+					window.getContentPane().setVisible(true);
+				}
 				
 			}
 

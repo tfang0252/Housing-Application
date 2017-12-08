@@ -41,8 +41,8 @@ import java.awt.event.ActionEvent;
 public class LoginScreen extends AppWindowPanel{
 	private JTextField SID;
 	private JPasswordField PW;
-	private HashMap <String,String> userList=new HashMap<String,String>();
-	private Scanner input;
+	//private HashMap <String,String> userList=new HashMap<String,String>();
+	
 	private boolean userFound;
 	private boolean pwFound;
 	public LoginScreen(JFrame window) {
@@ -148,6 +148,7 @@ public class LoginScreen extends AppWindowPanel{
 					Map.Entry entry = (Map.Entry)iterator.next();					
 					if(SID.getText().equals(entry.getKey())){
 						userFound = true;
+						currentID = SID.getText();
 					}
 					if(PW.getText().equals(entry.getValue())){
 						pwFound = true;
@@ -155,11 +156,18 @@ public class LoginScreen extends AppWindowPanel{
 			      }
 				
 				if(!userFound){
-					JOptionPane.showMessageDialog(window, "User not found. Please register");
-					window.getContentPane().removeAll();
-					window.getContentPane().add(new Registration(window));
-					window.pack();
-					window.getContentPane().setVisible(true);
+					
+					int option = JOptionPane.showConfirmDialog(window,
+							"User not found. Would you like to register?");
+					if(option == 0){
+						window.getContentPane().removeAll();
+						window.getContentPane().add(new Registration(window));
+						window.pack();
+						window.getContentPane().setVisible(true);
+					}
+					else{
+						
+					}
 				}
 				else if(userFound && !pwFound){
 					JOptionPane.showMessageDialog(window, "Password is invalid");	

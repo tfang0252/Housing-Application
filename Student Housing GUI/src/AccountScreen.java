@@ -4,15 +4,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.StringTokenizer;
 
 import javax.swing.ImageIcon;
@@ -26,14 +24,8 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 
-public class Registration extends MainScreen{
+public class AccountScreen extends MainScreen{
 	
-	//private HashMap <String,String> userList=new HashMap<String,String>();
-	//private HashMap <String, Student> studentData =new HashMap<String, Student>();
-	//Student currentStudent;
-	Scanner input;
-	
-	private String gend;
 	private JTextField userID;
 	private JPasswordField PW;
 	private JTextField fNameField;
@@ -55,19 +47,19 @@ public class Registration extends MainScreen{
 	private JLabel genderLabel;
 	private JLabel raceLabel;
 	private JLabel dormLabel;
-	private JLabel registration;
+	private JLabel profile;
 
 
 	
-	public Registration(JFrame window){
+	public AccountScreen(JFrame window){
 		super(window);
 		this.remove(BwhiteBox);
 		this.remove(blueBackground);
 		
-		registration = new JLabel("Registration Page");
-		registration.setFont(new Font("Arial", Font.BOLD, 35));
-		registration.setForeground(Color.WHITE);
-		registration.setBounds(450, 105, 320, 35);
+		profile = new JLabel("Account Page");
+		profile.setFont(new Font("Arial", Font.BOLD, 35));
+		profile.setForeground(Color.WHITE);
+		profile.setBounds(500, 105, 320, 35);
 		
 		
 		userIDLabel = new JLabel("User ID:________________________________");
@@ -75,7 +67,7 @@ public class Registration extends MainScreen{
 		userIDLabel.setForeground(Color.WHITE);
 		userIDLabel.setBounds(300, 185, 320, 35);
 		
-		userID = new JTextField();
+		userID = new JTextField(currentID);
 		userID.setBounds(600, 190, 320, 25);
 		
 		
@@ -147,39 +139,13 @@ public class Registration extends MainScreen{
 		dorm.addItem("South Lake Village");
 		dorm.addItem("West Lake Village");
 		
-		confirm = new JButton("Register");
-		confirm.setBounds(560, 610, 100, 25);
-		confirm.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent e){
-				if(userID.getText().equals("")){
-					JOptionPane.showMessageDialog(window, "User ID field cannot be blank.");
-				}
-				if(PW.getText().equals("")){
-					JOptionPane.showMessageDialog(window, "Password field cannot be blank.");
-				}
-				else{
-					buildUserFile();
-					if(male.isSelected()){
-						gend = "Male";
-					}
-					if(female.isSelected()){
-						gend = "Female";
-					}
-					currentStudent = new Student(userID.getText(), PW.getText(),
-							fNameField.getText(), rNameField.getText(), DOB.getText(),
-							Integer.valueOf(gradYear.getText()), gend, dorm.getSelectedItem().toString());
-					createStudentFile(currentStudent);
-					JOptionPane.showMessageDialog(window, "Registration Complete!");
-					window.getContentPane().removeAll();
-					//window.getContentPane().add(new ProfileScreen(window));
-					window.pack();
-					window.getContentPane().setVisible(true);
-					
-				}
-			}
-		});
-				
-		add(registration);
+		confirm = new JButton("Update");
+		confirm.setBounds(560, 610, 100, 25);		
+		
+		
+		
+		
+		add(profile);
 		add(userID);
 		add(userIDLabel);
 		add(PW);
@@ -198,73 +164,51 @@ public class Registration extends MainScreen{
 		add(dorm);
 		add(dormLabel);
 		add(confirm);
-			
+		
 		blueBackground = new JLabel("");
 		blueBackground.setBounds(-30, -0, 1034, 683);
 		blueBackground.setIcon(new ImageIcon("Images/BlueBG.png"));
 		this.add(blueBackground);
-	}
-	
-	public void buildUserFile(){
-		BufferedWriter writer;
-		try{
-			FileWriter fw = new FileWriter("UserLogins.txt", true);
-			writer = new BufferedWriter(fw);
-			PrintWriter output = new PrintWriter(writer);
-			if(!userID.getText().equals("") && !PW.getText().equals("")){
-				output.print(userID.getText()+":"+PW.getText());
-				output.println();
+		
+		readFile();
+		Set set = studentData.entrySet();
+		Iterator iterator = set.iterator();
+		while(iterator.hasNext()) {
+			Map.Entry entry = (Map.Entry)iterator.next();
+			if(currentID.equals(entry.getKey())){
+				Student tempStud = (Student) entry.getValue();
+				fNameField.setText(tempStud.getFirstName());
+				rNameField.setText(tempStud.getLastName());
+				PW.setText(tempStud.getPW());
+				DOB.setText(tempStud.getDOB());
+				gradYear.setText(String.valueOf(tempStud.getGradYear()));
+				String gender = tempStud.getGender();
+				if(gender.equals("Male")){
+					male.setSelected(true);
+				}
+				else{
+					female.setSelected(true);
+				}
+				dorm.setSelectedItem(tempStud.getDorm());
 			}
 			
-			writer.close();
-		}
-		catch(IOException e){
-			System.out.println("No file found");
 		}
 		
-		
-		
-	}
-
-	public void createStudent(){
-		String line;
-		StringTokenizer uData;
-		currentStudent = new Student(userID.getText(), PW.getText(),
-				fNameField.getText(), rNameField.getText(), DOB.getText(),
-				Integer.valueOf(gradYear.getText()), gend, dorm.getSelectedItem().toString());
-		/*
-		while((line=input.nextLine())!=null){
-			uData = new StringTokenizer(line,":");
-			String user = uData.nextToken();
-		
-			studentData.put(userID.getText(),  new Student(userID.getText(), PW.getText(),
-				fNameField.getText(), rNameField.getText(), DOB.getText(),
-				Integer.valueOf(gradYear.getText()), gend, dorm.getSelectedItem().toString()));
-				*/
-	
-		//createStudentFile(currentStudent);
-		
-	}
-	
-	public void createStudentFile(Student stud){
-		BufferedWriter writer;
-		try{
-			FileWriter fw = new FileWriter("StudentData.txt", true);
-			writer = new BufferedWriter(fw);
-			PrintWriter output = new PrintWriter(writer);
-			output.print(userID.getText()+":"+PW.getText()+":"+
-					fNameField.getText()+":"+ rNameField.getText() +":"+ DOB.getText()+":"+ 
-					Integer.valueOf(gradYear.getText())+":"+gend+":"+
-					dorm.getSelectedItem().toString());
-			output.println();			
-			writer.close();
-		}
-		catch(IOException e){
-			System.out.println("No file found");
-		}
+		revalidate();
 	}
 	
 	/*
+	public void readFile(){
+		StringTokenizer st;
+		Set set = studentData.entrySet();
+		Iterator iterator = set.iterator();
+		while(iterator.hasNext()) {
+			Map.Entry entry = (Map.Entry)iterator.next();
+			
+			
+		}
+	} */
+	
 	public void readFile(){
 		//userFound = false;
 		//pwFound = false;
@@ -283,14 +227,30 @@ public class Registration extends MainScreen{
 				//System.out.println(line);
 				
 				uData= new StringTokenizer(line, ":");
+				String tempUser = uData.nextToken();
+				String tempPW = uData.nextToken();
+				String tempFName = uData.nextToken();
+				String tempLName = uData.nextToken();
+				String tempDOB = uData.nextToken();
+				int tempGradYear = Integer.valueOf(uData.nextToken());
+				String tempGender = uData.nextToken();
+				String tempDorm = uData.nextToken();
+				Student tempStud = new Student(tempUser,tempPW,tempFName,tempLName,
+						tempDOB,tempGradYear,tempGender,tempDorm);
+				studentData.put(tempUser, tempStud);	
+				/*
+				System.out.println(tempFName);
+				System.out.println(tempLName);
+				System.out.println(tempDOB);
+				System.out.println(studentData.size());
+				*/
 				
-				String pw = uData.nextToken();
-				userList.put(user, pw);				
 			}
+		
 			
 		}
 		catch(NoSuchElementException e){
 			
 		}
-	} */
+	}
 }

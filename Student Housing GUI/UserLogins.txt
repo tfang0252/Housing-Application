@@ -1,13 +1,4 @@
-rgjoseph6465@eagle.fgcu.edu:Mutchi01.
-a@gmail.com:Mutchi05
-b@gmail.com:Mutchi01
-tony:password
-tony:password
-tony:password
-tony:password
-tony:password
-tony:password
-tony:password
-d@gmail.com:Mutchi01
-e@gmail.com:Mutchi02
-fuser:password
+a@gmail.com:Mutchi01
+b@gmail.com:Mutchi02
+c@gmail.com:Mutchi03
+d@gmail.com:Mutchi04
