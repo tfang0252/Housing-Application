@@ -49,31 +49,31 @@ public class MainScreen extends AppWindowPanel{
 		
 		profile = new JLabel("");
 		profile.setIcon(new ImageIcon("Images/Profile.png"));
-		profile.setBounds(30, -120, 1034, 683);
+		profile.setBounds(45, -120, 1034, 683);
 		this.add(profile);
 		
 		account = new JLabel("");
-		account.setBounds(15, -60, 1034, 683);
+		account.setBounds(45, -60, 1034, 683);
 		account.setIcon(new ImageIcon("Images/Account.png"));
 		this.add(account);
 		
 		events = new JLabel("");
-		events.setBounds(30, 0, 1034, 683);
+		events.setBounds(45, 0, 1034, 683);
 		events.setIcon(new ImageIcon("Images/Events.png"));
 		this.add(events);
 		
 		dormDir = new JLabel("");
-		dormDir.setBounds(5, 60, 1034, 683);
+		dormDir.setBounds(45, 60, 1034, 683);
 		dormDir.setIcon(new ImageIcon("Images/DormDir.png"));
 		this.add(dormDir);
 		
 		locations = new JLabel("");
-		locations.setBounds(5, 120, 1034, 683);
+		locations.setBounds(45, 120, 1034, 683);
 		locations.setIcon(new ImageIcon("Images/Locations.png"));
 		this.add(locations);
 		
 		faq = new JLabel("");
-		faq.setBounds(60, 180, 1034, 683);
+		faq.setBounds(45, 180, 1034, 683);
 		faq.setIcon(new ImageIcon("Images/FAQ.png"));
 		this.add(faq);
 		
@@ -89,7 +89,7 @@ public class MainScreen extends AppWindowPanel{
 		//this.add(fgcuLogo);
 		
 		whiteBox = new JLabel("");
-		whiteBox.setBounds(-10, 70, 1034, 683);
+		whiteBox.setBounds(0, 70, 1034, 683);
 		whiteBox.setIcon(new ImageIcon("Images/WhiteMenuBox.png"));
 		this.add(whiteBox);
 		

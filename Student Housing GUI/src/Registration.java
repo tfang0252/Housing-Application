@@ -65,85 +65,85 @@ public class Registration extends MainScreen{
 		registration.setBounds(450, 105, 320, 35);
 		
 		
-		userIDLabel = new JLabel("User ID:________________________________");
+		userIDLabel = new JLabel("User ID:");
 		userIDLabel.setFont(new Font("Arial", 15, 20));
-		userIDLabel.setForeground(Color.WHITE);
-		userIDLabel.setBounds(300, 185, 320, 35);
+		userIDLabel.setForeground(Color.BLACK);
+		userIDLabel.setBounds(350, 185, 320, 35);
 		
 		userID = new JTextField();
-		userID.setBounds(600, 190, 320, 25);
+		userID.setBounds(430, 190, 320, 25);
 		
 		
-		PWLabel = new JLabel("Password:___________________________________");
+		PWLabel = new JLabel("Password:");
 		PWLabel.setFont(new Font("Arial", 15, 20));
-		PWLabel.setForeground(Color.WHITE);
-		PWLabel.setBounds(300, 225, 320, 35);
+		PWLabel.setForeground(Color.BLACK);
+		PWLabel.setBounds(350, 225, 320, 35);
 		
 		PW = new JPasswordField();
-		PW.setBounds(600, 230, 320, 25);
+		PW.setBounds(450, 230, 320, 25);
 		
 		
-		fNameFieldLabel = new JLabel("First Name:_____________________________________");
+		fNameFieldLabel = new JLabel("First Name:");
 		fNameFieldLabel.setFont(new Font("Arial", 15, 20));
-		fNameFieldLabel.setForeground(Color.WHITE);
-		fNameFieldLabel.setBounds(300, 265, 320, 35);
+		fNameFieldLabel.setForeground(Color.BLACK);
+		fNameFieldLabel.setBounds(350, 265, 320, 35);
 		
 		fNameField = new JTextField();	
-		fNameField.setBounds(600, 270, 320, 25);
+		fNameField.setBounds(460, 270, 320, 25);
 		
 		
-		rNameFieldLabel = new JLabel("Last Name:___________________________________________");
+		rNameFieldLabel = new JLabel("Last Name:");
 		rNameFieldLabel.setFont(new Font("Arial", 15, 20));
-		rNameFieldLabel.setForeground(Color.WHITE);
-		rNameFieldLabel.setBounds(300, 305, 320, 35);
+		rNameFieldLabel.setForeground(Color.BLACK);
+		rNameFieldLabel.setBounds(350, 305, 320, 35);
 		
 		rNameField = new JTextField();
-		rNameField.setBounds(600, 310, 320, 25);
+		rNameField.setBounds(460, 310, 320, 25);
 		
 		
-		DOBLabel = new JLabel("Date of Birth:__________________________________________");
+		DOBLabel = new JLabel("Date of Birth:");
 		DOBLabel.setFont(new Font("Arial", 15, 20));
-		DOBLabel.setForeground(Color.WHITE);
-		DOBLabel.setBounds(300, 345, 320, 35);
+		DOBLabel.setForeground(Color.BLACK);
+		DOBLabel.setBounds(350, 345, 320, 35);
 		
 		DOB = new JTextField();
-		DOB.setBounds(600, 350, 320, 25);
+		DOB.setBounds(475, 350, 320, 25);
 		
 		
-		gradYearLabel = new JLabel("Graduation Year:_____________________________________");
+		gradYearLabel = new JLabel("Graduation Year:");
 		gradYearLabel.setFont(new Font("Arial", 15, 20));
-		gradYearLabel.setForeground(Color.WHITE);
-		gradYearLabel.setBounds(300, 385, 320, 35);
+		gradYearLabel.setForeground(Color.BLACK);
+		gradYearLabel.setBounds(350, 385, 320, 35);
 		
 		gradYear = new JTextField();
-		gradYear.setBounds(600, 390, 320, 25);
+		gradYear.setBounds(520, 390, 320, 25);
 		
 		
 		male = new JCheckBox("Male");
-		male.setBounds(600, 430, 100, 25);
+		male.setBounds(430, 430, 100, 25);
 		
-		genderLabel = new JLabel("Gender:_______________________________________");
+		genderLabel = new JLabel("Gender:");
 		genderLabel.setFont(new Font("Arial", 15, 20));
-		genderLabel.setForeground(Color.WHITE);
-		genderLabel.setBounds(300, 425, 320, 35);
+		genderLabel.setForeground(Color.BLACK);
+		genderLabel.setBounds(350, 425, 320, 35);
 				
 		female = new JCheckBox("Female");
-		female.setBounds(730, 430, 100, 25);
+		female.setBounds(550, 430, 100, 25);
 		
 		
-		dormLabel = new JLabel("Dorm:________________________________");
+		dormLabel = new JLabel("Dorm:");
 		dormLabel.setFont(new Font("Arial", 15, 20));
-		dormLabel.setForeground(Color.WHITE);
-		dormLabel.setBounds(300, 465, 320, 35);
+		dormLabel.setForeground(Color.BLACK);
+		dormLabel.setBounds(350, 465, 320, 35);
 		
 		dorm = new JComboBox<String>();
-		dorm.setBounds(600, 470, 100, 25);
+		dorm.setBounds(415, 470, 100, 25);
 		dorm.addItem("North Lake Village");
 		dorm.addItem("South Lake Village");
 		dorm.addItem("West Lake Village");
 		
 		confirm = new JButton("Register");
-		confirm.setBounds(560, 610, 100, 25);
+		confirm.setBounds(350, 525, 100, 25);
 		confirm.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				if(userID.getText().equals("")){
@@ -197,7 +197,7 @@ public class Registration extends MainScreen{
 			
 		blueBackground = new JLabel("");
 		blueBackground.setBounds(-30, -0, 1034, 683);
-		blueBackground.setIcon(new ImageIcon("Images/BlueBG.png"));
+		blueBackground.setIcon(new ImageIcon("Images/BlueBG2.png"));
 		this.add(blueBackground);
 	}
 	
