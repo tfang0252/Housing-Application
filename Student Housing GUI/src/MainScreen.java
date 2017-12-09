@@ -96,10 +96,11 @@ public class MainScreen extends AppWindowPanel{
 		BwhiteBox = new JLabel("");
 		BwhiteBox.setBounds(260, 70, 1050, 683);
 		BwhiteBox.setIcon(new ImageIcon("Images/BWhiteBox.png"));
-		//this.add(BwhiteBox);
+		this.add(BwhiteBox);
 		
 		blueBackground = new JLabel("");
 		blueBackground.setBounds(-30, -0, 1034, 683);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 		blueBackground.setIcon(new ImageIcon("Images/BlueBG3.png"));
@@ -109,6 +110,9 @@ public class MainScreen extends AppWindowPanel{
 =======
 		blueBackground.setIcon(new ImageIcon("Images/BlueBG.png"));
 >>>>>>> parent of 8b64d5d... visual changes
+=======
+		blueBackground.setIcon(new ImageIcon("Images/BlueBG3.png"));
+>>>>>>> parent of fec4764... Merge branch 'master' of https://github.com/tfang0252/Housing-Application
 		this.add(blueBackground);
 		
 		window.addMouseMotionListener(new MouseMotionAdapter(){
