@@ -96,11 +96,11 @@ public class MainScreen extends AppWindowPanel{
 		BwhiteBox = new JLabel("");
 		BwhiteBox.setBounds(260, 70, 1050, 683);
 		BwhiteBox.setIcon(new ImageIcon("Images/BWhiteBox.png"));
-		this.add(BwhiteBox);
+		//this.add(BwhiteBox);
 		
 		blueBackground = new JLabel("");
 		blueBackground.setBounds(-30, -0, 1034, 683);
-		blueBackground.setIcon(new ImageIcon("Images/BlueBG.png"));
+		blueBackground.setIcon(new ImageIcon("Images/BlueBG2.png"));
 		this.add(blueBackground);
 		
 		window.addMouseMotionListener(new MouseMotionAdapter(){
@@ -129,11 +129,11 @@ public class MainScreen extends AppWindowPanel{
 					revalidate();
 				}
 				if((e.getX()>25 && e.getX()<225) && (e.getY()>405 && e.getY()<455)){
-					dormDir.setIcon(new ImageIcon("Images/DormDir.png"));
+					dormDir.setIcon(new ImageIcon("Images/DormDirH.png"));
 					revalidate();
 				}
 				else{
-					dormDir.setIcon(new ImageIcon("Images/DormDirH.png"));
+					dormDir.setIcon(new ImageIcon("Images/DormDir.png"));
 					revalidate();
 				}
 				if((e.getX()>20 && e.getX()<235) && (e.getY()>465 && e.getY()<510)){
