@@ -277,6 +277,8 @@ public class LoginScreen extends AppWindowPanel{
 		this.add(lblBackground);
 		
 		JButton confirm = new JButton("Login");
+		
+		
 		confirm.setFont(new Font("Arial Black", Font.PLAIN, 16));
 		confirm.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0){		
@@ -319,6 +321,23 @@ public class LoginScreen extends AppWindowPanel{
 				}
 			}
 		});
+		
+		JButton regButton = new JButton("Register");
+		regButton.setFont(new Font("Arial Black", Font.PLAIN, 16));
+		regButton.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(e.getSource() == regButton) {
+					window.getContentPane().removeAll();
+					window.getContentPane().add(new Registration(window));
+					window.pack();
+					window.getContentPane().setVisible(true);
+				}
+				
+			}
+			
+		});
 
 		confirm.setBounds(620, 515, 150, 40);
 
@@ -327,11 +346,22 @@ public class LoginScreen extends AppWindowPanel{
 		confirm.setBounds(595, 515, 150, 40);
 
 		confirm.setBounds(620, 515, 150, 40);
+		
+		
 
 		confirm.setIcon(null);
 		confirm.setBackground(new Color(192, 192, 192));
 		confirm.setForeground(new Color(0, 0, 0));
 		this.add(confirm);
+		
+		regButton.setBounds(790, 515, 150, 40);
+		
+		
+
+		regButton.setIcon(null);
+		regButton.setBackground(new Color(192, 192, 192));
+		regButton.setForeground(new Color(0, 0, 0));
+		this.add(regButton);
 		
 		JLabel blueBackground = new JLabel("");
 		blueBackground.setLabelFor(window);
