@@ -38,11 +38,6 @@ public class AccountScreen extends MainScreen{
 	private JComboBox<String> dorm;
 	private JButton confirm;
 	
-	private JComboBox dayDOB = new JComboBox();
-	private JComboBox monthDOB= new JComboBox();
-	private JComboBox yearDOB= new JComboBox();
-	
-	
 	private JLabel userIDLabel;
 	private JLabel PWLabel;
 	private JLabel fNameFieldLabel;
@@ -67,105 +62,85 @@ public class AccountScreen extends MainScreen{
 		profile.setBounds(500, 105, 320, 35);
 		
 		
-		userIDLabel = new JLabel("User ID:");
+		userIDLabel = new JLabel("User ID:________________________________");
 		userIDLabel.setFont(new Font("Arial", 15, 20));
 		userIDLabel.setForeground(Color.WHITE);
 		userIDLabel.setBounds(300, 185, 320, 35);
 		
 		userID = new JTextField(currentID);
-		userID.setBounds(615, 190, 320, 25);
+		userID.setBounds(600, 190, 320, 25);
 		
 		
-		PWLabel = new JLabel("Password:");
+		PWLabel = new JLabel("Password:___________________________________");
 		PWLabel.setFont(new Font("Arial", 15, 20));
 		PWLabel.setForeground(Color.WHITE);
 		PWLabel.setBounds(300, 225, 320, 35);
 		
 		PW = new JPasswordField();
-		PW.setBounds(615, 230, 320, 25);
+		PW.setBounds(600, 230, 320, 25);
 		
 		
-		fNameFieldLabel = new JLabel("First Name:");
+		fNameFieldLabel = new JLabel("First Name:_____________________________________");
 		fNameFieldLabel.setFont(new Font("Arial", 15, 20));
 		fNameFieldLabel.setForeground(Color.WHITE);
 		fNameFieldLabel.setBounds(300, 265, 320, 35);
 		
 		fNameField = new JTextField();	
-		fNameField.setBounds(615, 270, 320, 25);
+		fNameField.setBounds(600, 270, 320, 25);
 		
 		
-		rNameFieldLabel = new JLabel("Last Name:");
+		rNameFieldLabel = new JLabel("Last Name:___________________________________________");
 		rNameFieldLabel.setFont(new Font("Arial", 15, 20));
 		rNameFieldLabel.setForeground(Color.WHITE);
 		rNameFieldLabel.setBounds(300, 305, 320, 35);
 		
 		rNameField = new JTextField();
-		rNameField.setBounds(615, 310, 320, 25);
+		rNameField.setBounds(600, 310, 320, 25);
 		
 		
-		DOBLabel = new JLabel("Date of Birth:");
+		DOBLabel = new JLabel("Date of Birth:__________________________________________");
 		DOBLabel.setFont(new Font("Arial", 15, 20));
 		DOBLabel.setForeground(Color.WHITE);
 		DOBLabel.setBounds(300, 345, 320, 35);
 		
-		//DOB = new JTextField();
-		//DOB.setBounds(600, 350, 320, 25);
+		DOB = new JTextField();
+		DOB.setBounds(600, 350, 320, 25);
 		
-			dayDOB.addItem(" ");
-			monthDOB.addItem(" ");
-			yearDOB.addItem(" ");
-		for(int i = 0;i<31;i++) {
-			dayDOB.addItem(i);
-		}
 		
-		for(int i =0; i<13;i++) {
-			monthDOB.addItem(i);
-		}
-		for(int i =2017; i>1949;i--) {
-			yearDOB.addItem(i);
-		}
-		
-		monthDOB.setBounds(615,350,60,25);
-		dayDOB.setBounds(685,350,60,25);
-		yearDOB.setBounds(755,350,80,25);
-		
-		gradYearLabel = new JLabel("Graduation Year:");
+		gradYearLabel = new JLabel("Graduation Year:_____________________________________");
 		gradYearLabel.setFont(new Font("Arial", 15, 20));
 		gradYearLabel.setForeground(Color.WHITE);
 		gradYearLabel.setBounds(300, 385, 320, 35);
 		
 		gradYear = new JTextField();
-		gradYear.setBounds(615, 390, 320, 25);
+		gradYear.setBounds(600, 390, 320, 25);
 		
 		
 		male = new JCheckBox("Male");
-		male.setBounds(615, 430, 100, 25);
+		male.setBounds(600, 430, 100, 25);
 		
-		genderLabel = new JLabel("Gender:");
+		genderLabel = new JLabel("Gender:_______________________________________");
 		genderLabel.setFont(new Font("Arial", 15, 20));
 		genderLabel.setForeground(Color.WHITE);
 		genderLabel.setBounds(300, 425, 320, 35);
 				
 		female = new JCheckBox("Female");
-		female.setBounds(745, 430, 100, 25);
-		female.setOpaque(true);
+		female.setBounds(730, 430, 100, 25);
 		
 		
-		dormLabel = new JLabel("Dorm:");
+		dormLabel = new JLabel("Dorm:________________________________");
 		dormLabel.setFont(new Font("Arial", 15, 20));
 		dormLabel.setForeground(Color.WHITE);
 		dormLabel.setBounds(300, 465, 320, 35);
 		
 		dorm = new JComboBox<String>();
-		dorm.setBounds(615, 470, 170, 25);
+		dorm.setBounds(600, 470, 100, 25);
 		dorm.addItem("North Lake Village");
 		dorm.addItem("South Lake Village");
 		dorm.addItem("West Lake Village");
 		
-
-		
 		confirm = new JButton("Update");
-		confirm.setBounds(660, 625, 100, 25);		
+		confirm.setBounds(560, 610, 100, 25);		
 		
 		
 		
@@ -179,10 +154,7 @@ public class AccountScreen extends MainScreen{
 		add(fNameFieldLabel);
 		add(rNameField);
 		add(rNameFieldLabel);
-		//add(DOB);
-		add(dayDOB);
-		add(monthDOB);
-		add(yearDOB);
+		add(DOB);
 		add(DOBLabel);
 		add(gradYear);
 		add(gradYearLabel);
