@@ -350,7 +350,7 @@ public class faqPage extends MainScreen {
 		
 		blueBackground = new JLabel("");
 		blueBackground.setBounds(-30, -0, 1034, 683);
-		blueBackground.setIcon(new ImageIcon("Images/BlueBG.png"));
+		blueBackground.setIcon(new ImageIcon("Images/BlueBG3.png"));
 		add(blueBackground);
 	}
 

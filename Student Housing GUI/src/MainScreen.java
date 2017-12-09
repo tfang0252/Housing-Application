@@ -100,19 +100,15 @@ public class MainScreen extends AppWindowPanel{
 		
 		blueBackground = new JLabel("");
 		blueBackground.setBounds(-30, -0, 1034, 683);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 		blueBackground.setIcon(new ImageIcon("Images/BlueBG3.png"));
-=======
+
 		blueBackground.setIcon(new ImageIcon("Images/BlueBG2.png"));
->>>>>>> ceaea166eae839f76124f60a7a55cb4e9a3de660
-=======
+
 		blueBackground.setIcon(new ImageIcon("Images/BlueBG.png"));
->>>>>>> parent of 8b64d5d... visual changes
-=======
+
 		blueBackground.setIcon(new ImageIcon("Images/BlueBG3.png"));
->>>>>>> parent of fec4764... Merge branch 'master' of https://github.com/tfang0252/Housing-Application
+
 		this.add(blueBackground);
 		
 		window.addMouseMotionListener(new MouseMotionAdapter(){
