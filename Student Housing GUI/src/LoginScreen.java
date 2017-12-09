@@ -103,7 +103,7 @@ public class LoginScreen extends AppWindowPanel{
 		this.add(back);
 		
 		SID = new JTextField();
-		SID.setBounds(630, 395, 290, 30);
+		SID.setBounds(630, 355, 290, 30);
 		
 		/*
 		 * jumps to password when enter is pressed
@@ -136,7 +136,7 @@ public class LoginScreen extends AppWindowPanel{
 		this.add(SID);
 		
 		PW = new JPasswordField();
-		PW.setBounds(630, 485, 290, 30);
+		PW.setBounds(630, 427, 290, 30);
 		
 		/*
 		 * attempts to login when enter is pressed in pw field
@@ -206,12 +206,12 @@ public class LoginScreen extends AppWindowPanel{
 		
 		
 		JLabel studentID = new JLabel("");
-		studentID.setBounds(630, 30, 1034, 683);
+		studentID.setBounds(630, -10, 1034, 683);
 		studentID.setIcon(new ImageIcon("Images/S-ID.png"));
 		this.add(studentID);
 		
 		JLabel password = new JLabel("");
-		password.setBounds(625, 120, 1034, 683);
+		password.setBounds(630, 65, 1034, 683);
 		password.setIcon(new ImageIcon("Images/Password.png"));
 		this.add(password);
 		
@@ -275,7 +275,7 @@ public class LoginScreen extends AppWindowPanel{
 				}
 			}
 		});
-		confirm.setBounds(630, 530, 150, 40);
+		confirm.setBounds(630, 475, 150, 40);
 		confirm.setIcon(null);
 		confirm.setBackground(new Color(0, 102, 51));
 		confirm.setForeground(SystemColor.controlHighlight);
