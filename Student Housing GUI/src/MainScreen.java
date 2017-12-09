@@ -24,7 +24,7 @@ public class MainScreen extends AppWindowPanel{
 	protected JLabel whiteBox;
 	protected JLabel BwhiteBox;
 	protected JLabel blueBackground;
-	protected JLabel pPhoto;
+	protected JLabel eagleLogo;
 	protected JLabel back; 
 	protected JLabel home;
 
@@ -41,10 +41,10 @@ public class MainScreen extends AppWindowPanel{
 		back.setBounds(70, -15, 100, 100);
 		this.add(back);
 		
-		pPhoto = new JLabel("");
-		pPhoto.setIcon(new ImageIcon("Images/pPhoto.png"));
-		pPhoto.setBounds(75, -215, 1034, 683);
-		this.add(pPhoto);
+		eagleLogo = new JLabel("");
+		eagleLogo.setIcon(new ImageIcon("Images/Logo_2.png"));
+		eagleLogo.setBounds(60, -222, 1034, 683);
+		this.add(eagleLogo);
 		
 		
 		profile = new JLabel("");
@@ -100,19 +100,19 @@ public class MainScreen extends AppWindowPanel{
 		
 		blueBackground = new JLabel("");
 		blueBackground.setBounds(-30, -0, 1034, 683);
-		blueBackground.setIcon(new ImageIcon("Images/BlueBG.png"));
+		blueBackground.setIcon(new ImageIcon("Images/BlueBG3.png"));
 		this.add(blueBackground);
 		
 		window.addMouseMotionListener(new MouseMotionAdapter(){
 			public void mouseMoved(MouseEvent e) {
-				if((e.getX()>50 && e.getX()<195) && (e.getY()>225 && e.getY()<270)){
+				if((e.getX()>50 && e.getX()<231) && (e.getY()>225 && e.getY()<270)){
 					profile.setIcon(new ImageIcon("Images/ProfileH.png"));
 					revalidate();
 				}
 				else{
 					profile.setIcon(new ImageIcon("Images/Profile.png"));
 				}
-				if((e.getX()>35 && e.getX()<210) && (e.getY()>290 && e.getY()<330)){
+				if((e.getX()>35 && e.getX()<233) && (e.getY()>290 && e.getY()<334)){
 					account.setIcon(new ImageIcon("Images/AccountH.png"));
 					revalidate();
 				}
@@ -120,7 +120,7 @@ public class MainScreen extends AppWindowPanel{
 					account.setIcon(new ImageIcon("Images/Account.png"));
 					revalidate();
 				}
-				if((e.getX()>50 && e.getX()<195) && (e.getY()>350 && e.getY()<395)){
+				if((e.getX()>50 && e.getX()<233) && (e.getY()>350 && e.getY()<395)){
 					events.setIcon(new ImageIcon("Images/EventsH.png"));
 					revalidate();
 				}
@@ -129,11 +129,11 @@ public class MainScreen extends AppWindowPanel{
 					revalidate();
 				}
 				if((e.getX()>25 && e.getX()<225) && (e.getY()>405 && e.getY()<455)){
-					dormDir.setIcon(new ImageIcon("Images/DormDir.png"));
+					dormDir.setIcon(new ImageIcon("Images/DormDirH.png"));
 					revalidate();
 				}
 				else{
-					dormDir.setIcon(new ImageIcon("Images/DormDirH.png"));
+					dormDir.setIcon(new ImageIcon("Images/DormDir.png"));
 					revalidate();
 				}
 				if((e.getX()>20 && e.getX()<235) && (e.getY()>465 && e.getY()<510)){
@@ -144,7 +144,7 @@ public class MainScreen extends AppWindowPanel{
 					locations.setIcon(new ImageIcon("Images/Locations.png"));
 					revalidate();
 				}
-				if((e.getX()>85 && e.getX()<165) && (e.getY()>525 && e.getY()<560)){
+				if((e.getX()>50 && e.getX()<234) && (e.getY()>533 && e.getY()<572)){
 					faq.setIcon(new ImageIcon("Images/FAQH.png"));
 					revalidate();
 				}

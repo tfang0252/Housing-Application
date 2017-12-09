@@ -102,7 +102,7 @@ public class LoginScreen extends AppWindowPanel{
 		this.add(back);
 		
 		SID = new JTextField();
-		SID.setBounds(595, 380, 290, 30);
+		SID.setBounds(620, 380, 290, 30);
 		
 		/*
 		 * jumps to password when enter is pressed
@@ -135,7 +135,7 @@ public class LoginScreen extends AppWindowPanel{
 		this.add(SID);
 		
 		PW = new JPasswordField();
-		PW.setBounds(595, 470, 290, 30);
+		PW.setBounds(620, 470, 290, 30);
 		
 		/*
 		 * attempts to login when enter is pressed in pw field
@@ -151,7 +151,8 @@ public class LoginScreen extends AppWindowPanel{
 						Map.Entry entry = (Map.Entry)iterator.next();					
 						if(SID.getText().equals(entry.getKey())){
 							userFound = true;
-							currentID = SID.getText();
+							//currentID = SID.getText();
+							
 						}
 						if(PW.getText().equals(entry.getValue())){
 							pwFound = true;
@@ -205,12 +206,12 @@ public class LoginScreen extends AppWindowPanel{
 		
 		
 		JLabel studentID = new JLabel("");
-		studentID.setBounds(570, 30, 1034, 683);
+		studentID.setBounds(620, 22, 1034, 683);
 		studentID.setIcon(new ImageIcon("Images/S-ID.png"));
 		this.add(studentID);
 		
 		JLabel password = new JLabel("");
-		password.setBounds(580, 120, 1034, 683);
+		password.setBounds(620, 112, 1034, 683);
 		password.setIcon(new ImageIcon("Images/Password.png"));
 		this.add(password);
 		
@@ -221,8 +222,8 @@ public class LoginScreen extends AppWindowPanel{
 		
 		
 		JLabel logo = new JLabel("");
-		logo.setIcon(new ImageIcon("Images/Eagle.png"));
-		logo.setBounds(710, -110, 1034, 683);
+		logo.setIcon(new ImageIcon("Images/eagleLogo.png"));
+		logo.setBounds(700, -100, 1034, 683);
 		this.add(logo);
 
 		JLabel lblBackground = new JLabel("");
@@ -274,7 +275,7 @@ public class LoginScreen extends AppWindowPanel{
 				}
 			}
 		});
-		confirm.setBounds(595, 515, 150, 40);
+		confirm.setBounds(620, 515, 150, 40);
 		confirm.setIcon(null);
 		confirm.setBackground(new Color(192, 192, 192));
 		confirm.setForeground(new Color(0, 0, 0));

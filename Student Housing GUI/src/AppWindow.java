@@ -40,7 +40,7 @@ public class AppWindow extends JFrame {
 		JFrame frame = this;
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("Images/Background.png"));
 		setTitle("Student Housing");
-		setResizable(true);
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(new BorderLayout());
 	

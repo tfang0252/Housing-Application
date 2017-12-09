@@ -48,6 +48,8 @@ public class ProfileScreen extends MainScreen{
 	private JLabel raceLabel;
 	private JLabel dormLabel;
 	private JLabel profile;
+	private JLabel profileBorder;
+	private JLabel pPhoto;
 
 
 	
@@ -56,9 +58,19 @@ public class ProfileScreen extends MainScreen{
 		this.remove(BwhiteBox);
 		this.remove(blueBackground);
 		
+	
+		
+		
+		profileBorder = new JLabel("");
+		profileBorder.setBounds(295,30,700,650);
+		profileBorder.setIcon(new ImageIcon("Images/profileLayout.png"));
+		//add(profileBorder);
+		
 		blueBackground = new JLabel("");
 		blueBackground.setBounds(-30, -0, 1034, 683);
-		blueBackground.setIcon(new ImageIcon("Images/BlueBG.png"));
+		blueBackground.setIcon(new ImageIcon("Images/BlueBG3.png"));
 		add(blueBackground);
+		
+		
 	}
 }
