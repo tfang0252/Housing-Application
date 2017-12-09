@@ -50,7 +50,7 @@ public class MainScreen extends AppWindowPanel{
 		pPhoto = new JLabel("");
 		pPhoto.setIcon(new ImageIcon("Images/pPhoto.png"));
 		pPhoto.setBounds(75, -215, 1034, 683);
-		this.add(pPhoto);
+		//this.add(pPhoto);
 		
 		
 		profile = new JLabel("");
