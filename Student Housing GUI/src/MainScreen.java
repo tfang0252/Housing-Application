@@ -96,11 +96,15 @@ public class MainScreen extends AppWindowPanel{
 		BwhiteBox = new JLabel("");
 		BwhiteBox.setBounds(260, 70, 1050, 683);
 		BwhiteBox.setIcon(new ImageIcon("Images/BWhiteBox.png"));
-		this.add(BwhiteBox);
+		//this.add(BwhiteBox);
 		
 		blueBackground = new JLabel("");
 		blueBackground.setBounds(-30, -0, 1034, 683);
+<<<<<<< HEAD
 		blueBackground.setIcon(new ImageIcon("Images/BlueBG3.png"));
+=======
+		blueBackground.setIcon(new ImageIcon("Images/BlueBG2.png"));
+>>>>>>> ceaea166eae839f76124f60a7a55cb4e9a3de660
 		this.add(blueBackground);
 		
 		window.addMouseMotionListener(new MouseMotionAdapter(){
