@@ -184,6 +184,8 @@ public class MainScreen extends AppWindowPanel{
 		window.addMouseListener(new MouseListener(){
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				
+				System.out.println(e.getX() +","+ e.getY());
 				//home button click
 				if((e.getX()>65 && e.getX()<175) && (e.getY()>620 && e.getY()<645)){
 					window.getContentPane().removeAll();
@@ -207,17 +209,36 @@ public class MainScreen extends AppWindowPanel{
 				}
 				//Profile button click
 				if((e.getX()>50 && e.getX()<195) && (e.getY()>225 && e.getY()<260)){
+					
 					window.getContentPane().removeAll();
 					window.getContentPane().add(new ProfileScreen(window));
 					window.pack();
 					window.getContentPane().setVisible(true);
 				}
 				if((e.getX()>50 && e.getX()<195) && (e.getY()>290 && e.getY()<320)){
+					
 					window.getContentPane().removeAll();
 					window.getContentPane().add(new AccountScreen(window));
 					window.pack();
 					window.getContentPane().setVisible(true);
 				}
+				//goes to event page on click
+				if((e.getX()>50 && e.getX()<195) && (e.getY()>350 && e.getY()<395)){
+					
+					window.getContentPane().removeAll();
+					window.getContentPane().add(new EventsPage(window));
+					window.pack();
+					window.getContentPane().setVisible(true);
+				}
+				
+				if((e.getX()>85 && e.getX()<165) && (e.getY()>525 && e.getY()<560)){
+					window.getContentPane().removeAll();
+					window.getContentPane().add(new faqPage(window));
+					window.pack();
+					window.getContentPane().setVisible(true);
+					
+				}
+				
 				
 			}
 

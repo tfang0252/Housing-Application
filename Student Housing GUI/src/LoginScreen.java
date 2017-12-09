@@ -15,6 +15,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionAdapter;
@@ -101,10 +103,104 @@ public class LoginScreen extends AppWindowPanel{
 		
 		SID = new JTextField();
 		SID.setBounds(595, 380, 290, 30);
+		
+		/*
+		 * jumps to password when enter is pressed
+		 */
+		SID.addKeyListener(new KeyListener(){
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyCode()==KeyEvent.VK_ENTER){
+			        PW.requestFocusInWindow();
+
+			       
+			    }
+
+				
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});		
 		this.add(SID);
 		
 		PW = new JPasswordField();
 		PW.setBounds(595, 470, 290, 30);
+		
+		/*
+		 * attempts to login when enter is pressed in pw field
+		 */
+		PW.addKeyListener(new KeyListener(){		
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyCode()==KeyEvent.VK_ENTER){
+					readFile();
+					Set set = userList.entrySet();
+					Iterator iterator = set.iterator();
+					while(iterator.hasNext()) {
+						Map.Entry entry = (Map.Entry)iterator.next();					
+						if(SID.getText().equals(entry.getKey())){
+							userFound = true;
+							currentID = SID.getText();
+						}
+						if(PW.getText().equals(entry.getValue())){
+							pwFound = true;
+						} 
+				      }
+					
+					if(!userFound){
+						
+						int option = JOptionPane.showConfirmDialog(window,
+								"User not found. Would you like to register?");
+						if(option == 0){
+							window.getContentPane().removeAll();
+							window.getContentPane().add(new Registration(window));
+							window.pack();
+							window.getContentPane().setVisible(true);
+						}
+						else{
+							
+						}
+					}
+					else if(userFound && !pwFound){
+						JOptionPane.showMessageDialog(window, "Password is invalid");	
+					}
+					else if(userFound && pwFound){
+						window.getContentPane().removeAll();
+						window.getContentPane().add(new MainScreen(window));
+						window.pack();
+						window.getContentPane().setVisible(true);	
+					}
+
+			       
+			    }
+
+				
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});		
+		
 		this.add(PW);
 		
 		
