@@ -18,7 +18,10 @@ public class EventsPage extends MainScreen{
 		
 		
 		
-		
+		eventPane = new JScrollPane();
+		eventPane.setForeground(Color.WHITE);
+		eventPane.setBounds(260, 70, 730, 570);
+		add(eventPane);
 
 		
 		blueBackground = new JLabel("");

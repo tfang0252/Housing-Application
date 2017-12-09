@@ -104,10 +104,14 @@ public class LoginScreen extends AppWindowPanel{
 		
 		SID = new JTextField();
 <<<<<<< HEAD
+<<<<<<< HEAD
 		SID.setBounds(620, 380, 290, 30);
 =======
 		SID.setBounds(630, 355, 290, 30);
 >>>>>>> ceaea166eae839f76124f60a7a55cb4e9a3de660
+=======
+		SID.setBounds(595, 380, 290, 30);
+>>>>>>> parent of 8b64d5d... visual changes
 		
 		/*
 		 * jumps to password when enter is pressed
@@ -141,10 +145,14 @@ public class LoginScreen extends AppWindowPanel{
 		
 		PW = new JPasswordField();
 <<<<<<< HEAD
+<<<<<<< HEAD
 		PW.setBounds(620, 470, 290, 30);
 =======
 		PW.setBounds(630, 427, 290, 30);
 >>>>>>> ceaea166eae839f76124f60a7a55cb4e9a3de660
+=======
+		PW.setBounds(595, 470, 290, 30);
+>>>>>>> parent of 8b64d5d... visual changes
 		
 		/*
 		 * attempts to login when enter is pressed in pw field
@@ -160,8 +168,7 @@ public class LoginScreen extends AppWindowPanel{
 						Map.Entry entry = (Map.Entry)iterator.next();					
 						if(SID.getText().equals(entry.getKey())){
 							userFound = true;
-							//currentID = SID.getText();
-							
+							currentID = SID.getText();
 						}
 						if(PW.getText().equals(entry.getValue())){
 							pwFound = true;
@@ -216,19 +223,27 @@ public class LoginScreen extends AppWindowPanel{
 		
 		JLabel studentID = new JLabel("");
 <<<<<<< HEAD
+<<<<<<< HEAD
 		studentID.setBounds(620, 22, 1034, 683);
 =======
 		studentID.setBounds(630, -10, 1034, 683);
 >>>>>>> ceaea166eae839f76124f60a7a55cb4e9a3de660
+=======
+		studentID.setBounds(570, 30, 1034, 683);
+>>>>>>> parent of 8b64d5d... visual changes
 		studentID.setIcon(new ImageIcon("Images/S-ID.png"));
 		this.add(studentID);
 		
 		JLabel password = new JLabel("");
 <<<<<<< HEAD
+<<<<<<< HEAD
 		password.setBounds(620, 112, 1034, 683);
 =======
 		password.setBounds(630, 65, 1034, 683);
 >>>>>>> ceaea166eae839f76124f60a7a55cb4e9a3de660
+=======
+		password.setBounds(580, 120, 1034, 683);
+>>>>>>> parent of 8b64d5d... visual changes
 		password.setIcon(new ImageIcon("Images/Password.png"));
 		this.add(password);
 		
@@ -240,12 +255,17 @@ public class LoginScreen extends AppWindowPanel{
 		
 		JLabel logo = new JLabel("");
 <<<<<<< HEAD
+<<<<<<< HEAD
 		logo.setIcon(new ImageIcon("Images/eagleLogo.png"));
 		logo.setBounds(700, -100, 1034, 683);
 =======
 		logo.setIcon(new ImageIcon("Images/Eagle.png"));
 		logo.setBounds(620, -95, 1034, 683);
 >>>>>>> ceaea166eae839f76124f60a7a55cb4e9a3de660
+=======
+		logo.setIcon(new ImageIcon("Images/Eagle.png"));
+		logo.setBounds(710, -110, 1034, 683);
+>>>>>>> parent of 8b64d5d... visual changes
 		this.add(logo);
 
 		JLabel lblBackground = new JLabel("");
@@ -298,10 +318,14 @@ public class LoginScreen extends AppWindowPanel{
 			}
 		});
 <<<<<<< HEAD
+<<<<<<< HEAD
 		confirm.setBounds(620, 515, 150, 40);
 =======
 		confirm.setBounds(630, 475, 150, 40);
 >>>>>>> ceaea166eae839f76124f60a7a55cb4e9a3de660
+=======
+		confirm.setBounds(595, 515, 150, 40);
+>>>>>>> parent of 8b64d5d... visual changes
 		confirm.setIcon(null);
 		confirm.setBackground(new Color(0, 102, 51));
 		confirm.setForeground(SystemColor.controlHighlight);
