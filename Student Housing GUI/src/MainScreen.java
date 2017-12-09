@@ -30,7 +30,8 @@ public class MainScreen extends AppWindowPanel{
 	protected JLabel eagleLogo;
 
 	public MainScreen(JFrame window){
-		home = new JLabel("");
+
+		home = new JLabel();
 		home.setIcon(new ImageIcon("Images/Home.png"));
 		home.setBounds(5, -15, 100, 100);
 		this.add(home);

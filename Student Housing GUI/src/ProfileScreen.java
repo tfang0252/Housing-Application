@@ -48,6 +48,8 @@ public class ProfileScreen extends MainScreen{
 	private JLabel raceLabel;
 	private JLabel dormLabel;
 	private JLabel profile;
+	private JLabel profileBorder;
+	private JLabel profileP;
 
 
 	
@@ -56,9 +58,93 @@ public class ProfileScreen extends MainScreen{
 		this.remove(BwhiteBox);
 		this.remove(blueBackground);
 		
+		
+		readFile();
+		Set set = studentData.entrySet();
+		Iterator iterator = set.iterator();
+		while(iterator.hasNext()) {
+			Map.Entry entry = (Map.Entry)iterator.next();
+			if(currentID.equals(entry.getKey())){
+				Student tempStud = (Student) entry.getValue();
+				fNameFieldLabel = new JLabel(tempStud.getFirstName());
+				rNameFieldLabel = new JLabel(tempStud.getLastName());
+				//PW.setText(tempStud.getPW());
+				//DOB.setText(tempStud.getDOB());
+				//gradYear.setText(String.valueOf(tempStud.getGradYear()));
+				String gender = tempStud.getGender();
+				
+			}
+			
+		}
+		
+		revalidate();
+		
+		fNameFieldLabel.setBounds(550,150,100,30);
+		fNameFieldLabel.setFont(new Font("Arial Black", Font.BOLD, 20));
+		add(fNameFieldLabel);
+		
+		rNameFieldLabel.setBounds(640,150,100,30);
+		rNameFieldLabel.setFont(new Font("Arial Black", Font.BOLD, 20));
+		add(rNameFieldLabel);
+		
+		
+		profileP = new JLabel("");
+		profileP.setBounds(350,70,150, 150);
+		profileP.setIcon(new ImageIcon("Images/pPhoto.png"));
+		add(profileP);
+		
+		
+		
+		
+		
+		
+		
+		profileBorder = new JLabel("");
+		profileBorder.setBounds(300,0,1034, 683);
+		profileBorder.setIcon(new ImageIcon("Images/profileBorder.png"));
+		add(profileBorder);
+		
+	
+		
 		blueBackground = new JLabel("");
 		blueBackground.setBounds(-30, -0, 1034, 683);
-		blueBackground.setIcon(new ImageIcon("Images/BlueBG.png"));
+		blueBackground.setIcon(new ImageIcon("Images/BlueBG3.png"));
 		add(blueBackground);
 	}
+
+
+
+	private void readFile() {
+		String line = "";
+		StringTokenizer uData;
+		
+		try{
+			input=new Scanner(new File("StudentData.txt"));
+		}
+		catch(FileNotFoundException e){
+			System.out.println("Error opening file..");
+			System.exit(1);
+		}
+		try{
+			while((line=input.nextLine())!=null){			
+				uData= new StringTokenizer(line, ":");
+				String tempUser = uData.nextToken();
+				String tempPW = uData.nextToken();
+				String tempFName = uData.nextToken();
+				String tempLName = uData.nextToken();
+				String tempDOB = uData.nextToken();
+				int tempGradYear = Integer.valueOf(uData.nextToken());
+				String tempGender = uData.nextToken();
+				String tempDorm = uData.nextToken();
+				Student tempStud = new Student(tempUser,tempPW,tempFName,tempLName,
+						tempDOB,tempGradYear,tempGender,tempDorm);
+				studentData.put(tempUser, tempStud);					
+			}			
+		}
+		catch(NoSuchElementException e){		
+		}
+		
+	}
+	
+	
 }

@@ -137,7 +137,7 @@ public class Registration extends MainScreen{
 		dormLabel.setBounds(350, 465, 320, 35);
 		
 		dorm = new JComboBox<String>();
-		dorm.setBounds(415, 470, 100, 25);
+		dorm.setBounds(415, 470, 140, 25);
 		dorm.addItem("North Lake Village");
 		dorm.addItem("South Lake Village");
 		dorm.addItem("West Lake Village");

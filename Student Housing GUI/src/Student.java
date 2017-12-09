@@ -25,7 +25,7 @@ public class Student {
 	public String getPW(){
 		return PW;
 	}
-	public String getFirstName(){
+	public  String getFirstName(){
 		return firstName;
 	}
 	public String getLastName(){
