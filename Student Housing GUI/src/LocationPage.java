@@ -28,8 +28,6 @@ public class LocationPage extends MainScreen{
 		locationPane.setForeground(Color.WHITE);
 		locationPane.setBounds(260, 70, 730, 570);
 		add(locationPane);
-
-
 		
 		
 		
