@@ -37,7 +37,7 @@ public class LocationPage extends MainScreen{
 			public void mouseWheelMoved(MouseWheelEvent e) {
 				//scroll down
 				if(e.getWheelRotation() > 0) {
-					zoom-=1;
+					zoom--;
 					getMap(zoom);
 					System.out.println(zoom);
 					
@@ -45,7 +45,7 @@ public class LocationPage extends MainScreen{
 				}
 				//scroll up
 				if(e.getWheelRotation() < 0) {
-					zoom+=1;
+					zoom++;
 					getMap(zoom);
 					System.out.println(zoom);
 					
