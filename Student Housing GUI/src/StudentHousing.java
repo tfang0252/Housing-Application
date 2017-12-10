@@ -43,8 +43,8 @@ public class StudentHousing extends AppWindowPanel{
 					}
 				});
 				
-				NLRadioButton.setBackground(new Color(102, 153, 102));
-				NLRadioButton.setBounds(169, 350, 21, 14);
+				NLRadioButton.setOpaque(false);
+ 				NLRadioButton.setBounds(485, 575, 21, 14);
 				this.add(NLRadioButton);
 				
 				SLRadioButton = new JRadioButton("");
@@ -57,8 +57,8 @@ public class StudentHousing extends AppWindowPanel{
 					
 				});
 				
-				SLRadioButton.setBackground(new Color(102, 153, 102));
-				SLRadioButton.setBounds(495, 350, 21, 14);
+				SLRadioButton.setOpaque(false);
+ 				SLRadioButton.setBounds(155, 575, 21, 14);
 				this.add(SLRadioButton);
 				
 				WLRadioButton = new JRadioButton("");
@@ -69,8 +69,8 @@ public class StudentHousing extends AppWindowPanel{
 						NLRadioButton.setSelected(false);	
 					}
 				});
-				WLRadioButton.setBackground(new Color(102, 153, 102));
-				WLRadioButton.setBounds(824, 350, 21, 14);
+				WLRadioButton.setOpaque(false);
+				WLRadioButton.setBounds(815, 575, 21, 14);
 				this.add(WLRadioButton);
 				
 				//following codes sets the images for each button,
@@ -86,9 +86,7 @@ public class StudentHousing extends AppWindowPanel{
 						WLRadioButton.setSelected(false);
 					}
 				});
-				lblNLVillage.setIcon(new ImageIcon("Images/NLButton.png"));
-				lblNLVillage.setBounds(31, 222, 286, 163);
-				this.add(lblNLVillage);
+
 				
 				JLabel lblSLVillage = new JLabel("");
 				lblSLVillage.addMouseListener(new MouseAdapter() {
@@ -99,9 +97,7 @@ public class StudentHousing extends AppWindowPanel{
 						WLRadioButton.setSelected(false);
 					}
 				});
-				lblSLVillage.setIcon(new ImageIcon("Images/SLButton.png"));
-				lblSLVillage.setBounds(356, 222, 286, 163);
-				this.add(lblSLVillage);
+
 				
 				JLabel lblWLVillage = new JLabel("");
 				lblWLVillage.addMouseListener(new MouseAdapter() {
@@ -112,14 +108,7 @@ public class StudentHousing extends AppWindowPanel{
 						WLRadioButton.setSelected(true);
 					}
 				});
-				lblWLVillage.setIcon(new ImageIcon("Images/WLButton.png"));
-				lblWLVillage.setBounds(684, 222, 286, 163);
-				this.add(lblWLVillage);
-				
-				JLabel lblLogo = new JLabel("");
-				lblLogo.setIcon(new ImageIcon("Images/FGCU-logo.png"));
-				lblLogo.setBounds(684, 11, 300, 150);
-				this.add(lblLogo);
+
 				
 				//button to select housing option
 				//will return error message if an option is not selected
@@ -142,7 +131,7 @@ public class StudentHousing extends AppWindowPanel{
 						}				
 					}
 				});
-				btnSelectHousing.setBounds(436, 470, 134, 29);
+				btnSelectHousing.setBounds(430, 617, 134, 29);
 				this.add(btnSelectHousing);
 				
 				//sets background image
@@ -155,3 +144,4 @@ public class StudentHousing extends AppWindowPanel{
 	}
 
 }
+
