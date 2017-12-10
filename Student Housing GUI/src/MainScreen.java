@@ -253,6 +253,7 @@ public class MainScreen extends AppWindowPanel{
 					window.getContentPane().setVisible(true);
 					
 				}
+			
 				
 				
 			}
