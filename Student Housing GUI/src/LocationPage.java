@@ -25,14 +25,16 @@ public class LocationPage extends MainScreen implements ActionListener{
 		this.remove(BwhiteBox);
 		this.remove(blueBackground);
 		
-		zoomIn = new JButton("+");
-		zoomOut = new JButton("-");
+		zoomIn = new JButton("");
+		zoomIn.setIcon(new ImageIcon("Images/zoomInButton.png"));
+		zoomOut = new JButton("");
+		zoomOut.setIcon(new ImageIcon("Images/zoomOutButton.png"));
 		zoomIn.addActionListener(this);
 		zoomOut.addActionListener(this);
 	
-		zoomIn.setBounds(925,325,50,20);
+		zoomIn.setBounds(918,325,30,20);
 		add(zoomIn);
-		zoomOut.setBounds(925,350,50,20);
+		zoomOut.setBounds(918,360,30,20);
 		add(zoomOut);
 
 	
