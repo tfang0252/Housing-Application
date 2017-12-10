@@ -43,7 +43,7 @@ import java.awt.event.ActionEvent;
 public class LoginScreen extends AppWindowPanel{
 	private JTextField SID;
 	private JPasswordField PW;
-	
+
 	private boolean userFound;
 	private boolean pwFound;
 	public LoginScreen(JFrame window) {
@@ -109,7 +109,7 @@ public class LoginScreen extends AppWindowPanel{
 
 		SID.setBounds(595, 380, 290, 30);
 
-		SID.setBounds(620, 380, 290, 30);
+		SID.setBounds(620, 380, 317, 30);
 
 		
 		/*
@@ -150,7 +150,7 @@ public class LoginScreen extends AppWindowPanel{
 
 		PW.setBounds(595, 470, 290, 30);
 
-		PW.setBounds(620, 470, 290, 30);
+		PW.setBounds(620, 470, 317, 30);
 
 		
 		/*
@@ -266,7 +266,7 @@ public class LoginScreen extends AppWindowPanel{
 		logo.setBounds(710, -110, 1034, 683);
 
 		logo.setIcon(new ImageIcon("Images/eagleLogo.png"));
-		logo.setBounds(700, -100, 1034, 683);
+		logo.setBounds(700, -80, 1034, 683);
 
 		this.add(logo);
 
@@ -347,14 +347,14 @@ public class LoginScreen extends AppWindowPanel{
 
 		confirm.setBounds(620, 515, 150, 40);
 		
-		
-
 		confirm.setIcon(null);
 		confirm.setBackground(new Color(192, 192, 192));
 		confirm.setForeground(new Color(0, 0, 0));
 		this.add(confirm);
 		
 		regButton.setBounds(790, 515, 150, 40);
+		
+		
 		
 		
 
