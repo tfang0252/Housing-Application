@@ -12,7 +12,7 @@ import javax.swing.*;
 
 public class LocationPage extends MainScreen{
 	
-	private JScrollPane locationPane;
+	private JPanel locationPane;
 
 
 	
@@ -24,7 +24,7 @@ public class LocationPage extends MainScreen{
 		
 		
 		
-		locationPane = new JScrollPane();
+		locationPane = new JPanel();
 		locationPane.setForeground(Color.WHITE);
 		locationPane.setBounds(260, 70, 730, 570);
 		add(locationPane);
@@ -41,7 +41,7 @@ public class LocationPage extends MainScreen{
 			+ ","
 			+ longitude
 			+ "&zoom=11&size=612x612&scale=2&maptype=roadmap";
-			String destinationFile = "image.jpg";
+			String destinationFile = "imageMap1.jpg";
 			
 			// read the map image from Google
 			// then save it to a local file: image.jpg
@@ -67,13 +67,12 @@ public class LocationPage extends MainScreen{
 			}
 			// create a GUI component that loads the image: image.jpg
 			//
-			ImageIcon imageIcon = new ImageIcon((new ImageIcon("image.jpg")).getImage().getScaledInstance(630, 600, java.awt.Image.SCALE_SMOOTH));
+			ImageIcon imageIcon = new ImageIcon((new ImageIcon("imageMap1.jpg")).getImage().getScaledInstance(630, 600, java.awt.Image.SCALE_SMOOTH));
 			locationPane.add(new JLabel(imageIcon));
 		
 			blueBackground = new JLabel("");
 			blueBackground.setBounds(-30, -0, 1034, 683);
-			blueBackground.setIcon(new ImageIcon("Images/BlueBG3"));
-			
+			blueBackground.setIcon(new ImageIcon("Images/BlueBG3.png"));
 			add(blueBackground);
 	}
 
