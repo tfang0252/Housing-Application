@@ -1,8 +1,7 @@
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Window;
-import java.awt.event.MouseWheelEvent;
-import java.awt.event.MouseWheelListener;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,22 +13,32 @@ import javax.swing.*;
 public class LocationPage extends MainScreen{
 	
 	private JPanel locationPane;
+<<<<<<< HEAD
 	private int zoom =10;
 	private JLabel testMap;
+=======
+
+
+>>>>>>> parent of 0d3f0aa... map stuff
 	
 	public LocationPage(JFrame window) {
 		super(window);
 		this.remove(BwhiteBox);
 		this.remove(blueBackground);
 		
+<<<<<<< HEAD
 	
 		testMap = new JLabel("");
 		testMap.setBounds(260, 70, 730, 570);
+=======
+		
+>>>>>>> parent of 0d3f0aa... map stuff
 		
 		
 		locationPane = new JPanel();
 		locationPane.setForeground(Color.WHITE);
 		locationPane.setBounds(260, 70, 730, 570);
+<<<<<<< HEAD
 		locationPane.add(testMap);
 		locationPane.addMouseWheelListener(new MouseWheelListener(){
 			@Override
@@ -59,22 +68,20 @@ public class LocationPage extends MainScreen{
 			// create a GUI component that loads the image: image.jpg
 			//
 	
+=======
+		add(locationPane);
 		
-			blueBackground = new JLabel("");
-			blueBackground.setBounds(-30, -0, 1034, 683);
-			blueBackground.setIcon(new ImageIcon("Images/BlueBG3.png"));
-			add(blueBackground);
-	}
-	
-	public void getMap(int zoom) {
+>>>>>>> parent of 0d3f0aa... map stuff
+		
+		
 		try {
-			String latitude = "26.471038";
-			String longitude = "-81.770770";
+			String latitude = "40.714728";
+			String longitude = "-73.998672";
 			String imageUrl = "https://maps.googleapis.com/maps/api/staticmap?center="
 			+ latitude
 			+ ","
 			+ longitude
-			+ "&zoom="+zoom+"&size=612x612&scale=2&maptype=roadmap";
+			+ "&zoom=11&size=612x612&scale=2&maptype=roadmap";
 			String destinationFile = "imageMap1.jpg";
 			
 			System.out.println(imageUrl);
@@ -107,6 +114,15 @@ public class LocationPage extends MainScreen{
 			
 			System.exit(1);
 			}
+			// create a GUI component that loads the image: image.jpg
+			//
+			ImageIcon imageIcon = new ImageIcon((new ImageIcon("imageMap1.jpg")).getImage().getScaledInstance(630, 600, java.awt.Image.SCALE_SMOOTH));
+			locationPane.add(new JLabel(imageIcon));
+		
+			blueBackground = new JLabel("");
+			blueBackground.setBounds(-30, -0, 1034, 683);
+			blueBackground.setIcon(new ImageIcon("Images/BlueBG3.png"));
+			add(blueBackground);
 	}
 
 	
