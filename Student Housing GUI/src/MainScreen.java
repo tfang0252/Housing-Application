@@ -246,7 +246,7 @@ public class MainScreen extends AppWindowPanel{
 					window.getContentPane().setVisible(true);
 				}
 				
-				if((e.getX()>85 && e.getX()<165) && (e.getY()>525 && e.getY()<560)){
+				if((e.getX()>50 && e.getX()<230) && (e.getY()>525 && e.getY()<570)){
 					window.getContentPane().removeAll();
 					window.getContentPane().add(new faqPage(window));
 					window.pack();
