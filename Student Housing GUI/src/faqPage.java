@@ -104,52 +104,6 @@ public class faqPage extends MainScreen implements ActionListener {
 		this.add(everythingElseB);
 		
 		this.add(BwhiteBox);
-		/*
-		window.addMouseMotionListener(new MouseMotionAdapter(){
-			public void mouseMoved(MouseEvent e) {
-				if((e.getX()>333 && e.getX()<660) && (e.getY()>300 && e.getY()<325)){
-					appAndPay.setIcon(new ImageIcon("Images/ApplicationPaymentsB.PNG"));
-					revalidate();
-				}
-				else{
-					appAndPay.setIcon(new ImageIcon("Images/ApplicationPayments.PNG"));
-				}
-				if((e.getX()>333 && e.getX()<478) && (e.getY()>368 && e.getY()<383)){
-					assignment.setIcon(new ImageIcon("Images/assignmentB.PNG"));
-					revalidate();
-				}
-				else{
-					assignment.setIcon(new ImageIcon("Images/assignment.PNG"));
-				}
-				if((e.getX()>333 && e.getX()<470) && (e.getY()>424 && e.getY()<444)){
-					rooms.setIcon(new ImageIcon("Images/theRoomsB.PNG"));
-					revalidate();
-				}
-				else{
-					rooms.setIcon(new ImageIcon("Images/theRooms.PNG"));
-				}
-				if((e.getX()>333 && e.getX()<533) && (e.getY()>481 && e.getY()<501)){
-					policies.setIcon(new ImageIcon("Images/HousingPoliciesB.PNG"));
-					revalidate();
-				}
-				else{
-					policies.setIcon(new ImageIcon("Images/HousingPolicies.PNG"));
-				}
-				if((e.getX()>333 && e.getX()<524) && (e.getY()>534 && e.getY()<555)){
-					everythingElse.setIcon(new ImageIcon("Images/everythingElseB.PNG"));
-					revalidate();
-				}
-				else{
-					everythingElse.setIcon(new ImageIcon("Images/everythingElse.PNG"));
-				}
-			}
-		});	
-		*/
-		
-		
-		
-		
-		
 
 		
 		blueBackground = new JLabel("");

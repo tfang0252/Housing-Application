@@ -253,8 +253,13 @@ public class MainScreen extends AppWindowPanel{
 					window.getContentPane().setVisible(true);
 					
 				}
-			
-				
+			//this adds the location page
+				if((e.getX()>20 && e.getX()<235) && (e.getY()>465 && e.getY()<510)){
+					window.getContentPane().removeAll();
+					window.getContentPane().add(new LocationPage(window));
+					window.pack();
+					window.getContentPane().setVisible(true);
+				}	
 				
 			}
 
