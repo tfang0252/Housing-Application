@@ -140,7 +140,7 @@ public class AccountScreen extends MainScreen{
 		dorm.addItem("West Lake Village");
 		
 		confirm = new JButton("Update");
-		confirm.setBounds(650, 622, 100, 25);		
+		confirm.setBounds(862, 622, 100, 25);		
 		
 		
 		
