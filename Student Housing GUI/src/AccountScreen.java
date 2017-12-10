@@ -62,7 +62,7 @@ public class AccountScreen extends MainScreen{
 		profile.setBounds(500, 105, 320, 35);
 		
 		
-		userIDLabel = new JLabel("User ID:________________________________");
+		userIDLabel = new JLabel("User ID:");
 		userIDLabel.setFont(new Font("Arial", 15, 20));
 		userIDLabel.setForeground(Color.WHITE);
 		userIDLabel.setBounds(300, 185, 320, 35);
@@ -71,7 +71,7 @@ public class AccountScreen extends MainScreen{
 		userID.setBounds(600, 190, 320, 25);
 		
 		
-		PWLabel = new JLabel("Password:___________________________________");
+		PWLabel = new JLabel("Password:");
 		PWLabel.setFont(new Font("Arial", 15, 20));
 		PWLabel.setForeground(Color.WHITE);
 		PWLabel.setBounds(300, 225, 320, 35);
@@ -80,7 +80,7 @@ public class AccountScreen extends MainScreen{
 		PW.setBounds(600, 230, 320, 25);
 		
 		
-		fNameFieldLabel = new JLabel("First Name:_____________________________________");
+		fNameFieldLabel = new JLabel("First Name:");
 		fNameFieldLabel.setFont(new Font("Arial", 15, 20));
 		fNameFieldLabel.setForeground(Color.WHITE);
 		fNameFieldLabel.setBounds(300, 265, 320, 35);
@@ -89,7 +89,7 @@ public class AccountScreen extends MainScreen{
 		fNameField.setBounds(600, 270, 320, 25);
 		
 		
-		rNameFieldLabel = new JLabel("Last Name:___________________________________________");
+		rNameFieldLabel = new JLabel("Last Name:");
 		rNameFieldLabel.setFont(new Font("Arial", 15, 20));
 		rNameFieldLabel.setForeground(Color.WHITE);
 		rNameFieldLabel.setBounds(300, 305, 320, 35);
@@ -98,7 +98,7 @@ public class AccountScreen extends MainScreen{
 		rNameField.setBounds(600, 310, 320, 25);
 		
 		
-		DOBLabel = new JLabel("Date of Birth:__________________________________________");
+		DOBLabel = new JLabel("Date of Birth:");
 		DOBLabel.setFont(new Font("Arial", 15, 20));
 		DOBLabel.setForeground(Color.WHITE);
 		DOBLabel.setBounds(300, 345, 320, 35);
@@ -107,7 +107,7 @@ public class AccountScreen extends MainScreen{
 		DOB.setBounds(600, 350, 320, 25);
 		
 		
-		gradYearLabel = new JLabel("Graduation Year:_____________________________________");
+		gradYearLabel = new JLabel("Graduation Year:");
 		gradYearLabel.setFont(new Font("Arial", 15, 20));
 		gradYearLabel.setForeground(Color.WHITE);
 		gradYearLabel.setBounds(300, 385, 320, 35);
@@ -119,7 +119,7 @@ public class AccountScreen extends MainScreen{
 		male = new JCheckBox("Male");
 		male.setBounds(600, 430, 100, 25);
 		
-		genderLabel = new JLabel("Gender:_______________________________________");
+		genderLabel = new JLabel("Gender:");
 		genderLabel.setFont(new Font("Arial", 15, 20));
 		genderLabel.setForeground(Color.WHITE);
 		genderLabel.setBounds(300, 425, 320, 35);
@@ -128,7 +128,7 @@ public class AccountScreen extends MainScreen{
 		female.setBounds(730, 430, 100, 25);
 		
 		
-		dormLabel = new JLabel("Dorm:________________________________");
+		dormLabel = new JLabel("Dorm:");
 		dormLabel.setFont(new Font("Arial", 15, 20));
 		dormLabel.setForeground(Color.WHITE);
 		dormLabel.setBounds(300, 465, 320, 35);
