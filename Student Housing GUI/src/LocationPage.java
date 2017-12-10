@@ -19,7 +19,7 @@ public class LocationPage extends MainScreen implements ActionListener{
 	private JLabel testMap;
 	private JButton zoomIn;
 	private JButton zoomOut;
-	
+	private int i = 3;
 	public LocationPage(JFrame window) {
 		super(window);
 		this.remove(BwhiteBox);
@@ -39,7 +39,7 @@ public class LocationPage extends MainScreen implements ActionListener{
 		testMap = new JLabel("");
 		testMap.setBounds(360, 70, 1034, 683);
 
-		testMap.setIcon(new ImageIcon("Images/map1.png"));
+		testMap.setIcon(new ImageIcon("Images/map3.png"));
 		
 		
 		locationPane = new JPanel();
@@ -61,23 +61,29 @@ public class LocationPage extends MainScreen implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		int i = 3;
+		
 		
 		if(e.getSource() == zoomIn) {
 			i++;
-			testMap.setIcon(new ImageIcon("Images/map"+i+".png"));
-			revalidate();
+			
+			
 			if(i>5 || i <1) {
 				i=3;
 			}
+			System.out.println(i);
+			testMap.setIcon(new ImageIcon("Images/map"+i+".png"));
+			revalidate();
 		}
 		if(e.getSource() == zoomOut) {
 			i--;
-			testMap.setIcon(new ImageIcon("Images/map"+i+".png"));
-			revalidate();
+			
+			
 			if(i>5 || i <1) {
 				i=3;
 			}
+			System.out.println(i);
+			testMap.setIcon(new ImageIcon("Images/map"+i+".png"));
+			revalidate();
 		}
 		
 	}
