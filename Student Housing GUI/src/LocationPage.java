@@ -1,3 +1,4 @@
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Window;
@@ -13,9 +14,10 @@ import java.net.URL;
 
 import javax.swing.*;
 
-public class LocationPage extends MainScreen implements ActionListener{
+
+public class LocationPage extends MainScreen{
 	
-	private JPanel locationPane;
+	private JFrame locationPane;
 	private JLabel testMap;
 	private JButton zoomIn;
 	private JButton zoomOut;
@@ -25,35 +27,21 @@ public class LocationPage extends MainScreen implements ActionListener{
 		this.remove(BwhiteBox);
 		this.remove(blueBackground);
 		
-		zoomIn = new JButton("");
-		zoomIn.setIcon(new ImageIcon("Images/zoomInButton.png"));
-		zoomOut = new JButton("");
-		zoomOut.setIcon(new ImageIcon("Images/zoomOutButton.png"));
-		zoomIn.addActionListener(this);
-		zoomOut.addActionListener(this);
 	
-		zoomIn.setBounds(918,325,30,20);
-		add(zoomIn);
-		zoomOut.setBounds(918,360,30,20);
-		add(zoomOut);
 
 	
-		testMap = new JLabel("");
-		testMap.setBounds(360, 70, 1034, 683);
-
-		testMap.setIcon(new ImageIcon("Images/map3.png"));
+		GMapsAPI fgcu = new GMapsAPI();
 		
-		
-		locationPane = new JPanel();
+		locationPane = new JFrame();
 		locationPane.setForeground(Color.WHITE);
 		locationPane.setBounds(270, 70, 730, 570);
-
-		locationPane.add(testMap);
-		
+		//locationPane.setLayout(null);
+		locationPane.add(fgcu, BorderLayout.CENTER);
+		locationPane.setVisible(true);
 	
-		add(testMap);
+		add(locationPane);
 
-			this.add(BwhiteBox);
+			//this.add(BwhiteBox);
 		
 			blueBackground = new JLabel("");
 			blueBackground.setBounds(-30, -0, 1034, 683);
@@ -61,34 +49,7 @@ public class LocationPage extends MainScreen implements ActionListener{
 			add(blueBackground);
 	}
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		
-		
-		if(e.getSource() == zoomIn) {
-			i++;
-			
-			
-			if(i>5 || i <1) {
-				i=3;
-			}
-			System.out.println(i);
-			testMap.setIcon(new ImageIcon("Images/map"+i+".png"));
-			revalidate();
-		}
-		if(e.getSource() == zoomOut) {
-			i--;
-			
-			
-			if(i>5 || i <1) {
-				i=3;
-			}
-			System.out.println(i);
-			testMap.setIcon(new ImageIcon("Images/map"+i+".png"));
-			revalidate();
-		}
-		
-	}
+
 
 	
 }
