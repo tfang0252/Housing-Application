@@ -32,7 +32,6 @@ public class LocationPage extends MainScreen{
 		locationPane.setBounds(260, 70, 730, 570);
 		locationPane.add(testMap);
 		locationPane.addMouseWheelListener(new MouseWheelListener(){
-
 			@Override
 			public void mouseWheelMoved(MouseWheelEvent e) {
 				//scroll down
@@ -40,8 +39,6 @@ public class LocationPage extends MainScreen{
 					zoom-=1;
 					getMap(zoom);
 					System.out.println(zoom);
-					
-					
 				}
 				//scroll up
 				if(e.getWheelRotation() < 0) {
@@ -95,6 +92,7 @@ public class LocationPage extends MainScreen{
 			while ((length = is.read(b)) != -1) {
 			os.write(b, 0, length);
 			}
+			
 			length++;
 			
 			is.close();
