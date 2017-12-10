@@ -223,14 +223,14 @@ public class MainScreen extends AppWindowPanel{
 					window.getContentPane().setVisible(true);
 				}
 				//Profile button click
-				if((e.getX()>50 && e.getX()<195) && (e.getY()>225 && e.getY()<260)){
+				if((e.getX()>50 && e.getX()<231) && (e.getY()>225 && e.getY()<270)){
 					
 					window.getContentPane().removeAll();
 					window.getContentPane().add(new ProfileScreen(window));
 					window.pack();
 					window.getContentPane().setVisible(true);
 				}
-				if((e.getX()>50 && e.getX()<195) && (e.getY()>290 && e.getY()<320)){
+				if((e.getX()>35 && e.getX()<233) && (e.getY()>290 && e.getY()<334)){
 					
 					window.getContentPane().removeAll();
 					window.getContentPane().add(new AccountScreen(window));
@@ -246,7 +246,7 @@ public class MainScreen extends AppWindowPanel{
 					window.getContentPane().setVisible(true);
 				}
 				
-				if((e.getX()>50 && e.getX()<230) && (e.getY()>525 && e.getY()<570)){
+				if((e.getX()>50 && e.getX()<234) && (e.getY()>533 && e.getY()<572)){
 					window.getContentPane().removeAll();
 					window.getContentPane().add(new faqPage(window));
 					window.pack();
