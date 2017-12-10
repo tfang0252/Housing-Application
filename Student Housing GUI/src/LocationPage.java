@@ -13,11 +13,12 @@ import java.io.OutputStream;
 import java.net.URL;
 
 import javax.swing.*;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 
 public class LocationPage extends MainScreen{
 	
-	private JFrame locationPane;
+	private JInternalFrame locationPane;
 	private JLabel testMap;
 	private JButton zoomIn;
 	private JButton zoomOut;
@@ -32,11 +33,16 @@ public class LocationPage extends MainScreen{
 	
 		GMapsAPI fgcu = new GMapsAPI();
 		
-		locationPane = new JFrame();
+		locationPane = new JInternalFrame();
 		locationPane.setForeground(Color.WHITE);
-		locationPane.setBounds(270, 70, 730, 570);
-		//locationPane.setLayout(null);
+		locationPane.setBounds(270, 70, 715, 580);
+		
 		locationPane.add(fgcu, BorderLayout.CENTER);
+		//locationPane.setUndecorated(true);
+		BasicInternalFrameUI bi = (BasicInternalFrameUI)locationPane.getUI();
+		bi.setNorthPane(null);
+
+		  
 		locationPane.setVisible(true);
 	
 		add(locationPane);
