@@ -15,7 +15,7 @@ public class LocationPage extends MainScreen{
 	
 	private JPanel locationPane;
 	private int zoom =10;
-
+	private JLabel testMap;
 	
 	public LocationPage(JFrame window) {
 		super(window);
@@ -23,27 +23,32 @@ public class LocationPage extends MainScreen{
 		this.remove(blueBackground);
 		
 	
+		testMap = new JLabel("");
+		testMap.setBounds(260, 70, 730, 570);
 		
 		
 		locationPane = new JPanel();
 		locationPane.setForeground(Color.WHITE);
 		locationPane.setBounds(260, 70, 730, 570);
-		
+		locationPane.add(testMap);
 		locationPane.addMouseWheelListener(new MouseWheelListener(){
 
 			@Override
 			public void mouseWheelMoved(MouseWheelEvent e) {
 				//scroll down
 				if(e.getWheelRotation() > 0) {
-					zoom--;
+					zoom-=1;
 					getMap(zoom);
-					revalidate();
+					System.out.println(zoom);
+					
+					
 				}
 				//scroll up
 				if(e.getWheelRotation() < 0) {
-					zoom++;
+					zoom+=1;
 					getMap(zoom);
-					revalidate();
+					System.out.println(zoom);
+					
 				}
 				
 			}
@@ -56,8 +61,7 @@ public class LocationPage extends MainScreen{
 	
 			// create a GUI component that loads the image: image.jpg
 			//
-			ImageIcon imageIcon = new ImageIcon((new ImageIcon("imageMap1.jpg")).getImage().getScaledInstance(630, 600, java.awt.Image.SCALE_SMOOTH));
-			locationPane.add(new JLabel(imageIcon));
+	
 		
 			blueBackground = new JLabel("");
 			blueBackground.setBounds(-30, -0, 1034, 683);
@@ -76,10 +80,12 @@ public class LocationPage extends MainScreen{
 			+ "&zoom="+zoom+"&size=612x612&scale=2&maptype=roadmap";
 			String destinationFile = "imageMap1.jpg";
 			
+			System.out.println(imageUrl);
 			// read the map image from Google
 			// then save it to a local file: image.jpg
 		
 			URL url = new URL(imageUrl);
+			System.out.println(url);
 			InputStream is = url.openStream();
 			OutputStream os = new FileOutputStream(destinationFile);
 			
@@ -89,9 +95,14 @@ public class LocationPage extends MainScreen{
 			while ((length = is.read(b)) != -1) {
 			os.write(b, 0, length);
 			}
+			length++;
 			
 			is.close();
 			os.close();
+			
+			
+			testMap.setIcon(new ImageIcon(destinationFile));
+			revalidate();
 			} catch (IOException e) {
 			
 			e.printStackTrace();
