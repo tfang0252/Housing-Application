@@ -261,6 +261,13 @@ public class MainScreen extends AppWindowPanel{
 					window.getContentPane().setVisible(true);
 				}	
 				
+				if((e.getX()>25 && e.getX()<225) && (e.getY()>405 && e.getY()<455)) {
+					window.getContentPane().removeAll();
+					window.getContentPane().add(new DirPage(window));
+					window.pack();
+					window.getContentPane().setVisible(true);
+				}
+				
 			}
 
 			@Override
