@@ -49,7 +49,7 @@ public class faqPage extends MainScreen implements ActionListener {
 		
 		appAndPay = new JLabel("");
 		appAndPay.setIcon(new ImageIcon("Images/ApplicationPayments.PNG"));
-		appAndPay.setBounds(300, -60, 1034, 683);
+		appAndPay.setBounds(345, -50, 1034, 683);
 		
 		appAndPayB.setBounds(328, 270, 319, 30);
 		appAndPayB.setOpaque(false);
@@ -61,10 +61,10 @@ public class faqPage extends MainScreen implements ActionListener {
 		
 		assignment = new JLabel("");
 		assignment.setIcon(new ImageIcon("Images/assignment.PNG"));
-		assignment.setBounds(300, 10, 1034, 683);
+		assignment.setBounds(645, -50, 1034, 683);
 		this.add(assignment);
-		assignmentB.setBounds(310, 335, 170, 30);
-		assignmentB.setOpaque(false);
+		assignmentB.setBounds(670, 280, 170, 30);
+		assignmentB.setOpaque(true);
 		assignmentB.setContentAreaFilled(false);
 		assignmentB.setBorderPainted(false);
 		assignmentB.addActionListener(this);
@@ -72,9 +72,9 @@ public class faqPage extends MainScreen implements ActionListener {
 		
 		rooms = new JLabel("");
 		rooms.setIcon(new ImageIcon("Images/theRooms.PNG"));
-		rooms.setBounds(310, 60, 1034, 683);
+		rooms.setBounds(345, 60, 1034, 683);
 		this.add(rooms);
-		roomsB.setBounds(310, 390, 160,30);
+		roomsB.setBounds(370, 390, 160,30);
 		roomsB.setOpaque(false);
 		roomsB.setContentAreaFilled(false);
 		roomsB.setBorderPainted(false);
@@ -83,9 +83,9 @@ public class faqPage extends MainScreen implements ActionListener {
 		
 		policies = new JLabel("");
 		policies.setIcon(new ImageIcon("Images/HousingPolicies.PNG"));
-		policies.setBounds(300, 120, 1034, 683);
+		policies.setBounds(645, 60, 1034, 683);
 		this.add(policies);
-		policiesB.setBounds(310, 445, 220,30);
+		policiesB.setBounds(670, 385, 220,30);
 		policiesB.setOpaque(false);
 		policiesB.setContentAreaFilled(false);
 		policiesB.setBorderPainted(false);
@@ -94,9 +94,9 @@ public class faqPage extends MainScreen implements ActionListener {
 		
 		everythingElse = new JLabel("");
 		everythingElse.setIcon(new ImageIcon("Images/everythingElse.PNG"));
-		everythingElse.setBounds(300, 180, 1034, 683);
+		everythingElse.setBounds(345, 180, 1034, 683);
 		this.add(everythingElse);
-		everythingElseB.setBounds(300, 500, 220,30);
+		everythingElseB.setBounds(370, 500, 220,30);
 		everythingElseB.setOpaque(false);
 		everythingElseB.setContentAreaFilled(false);
 		everythingElseB.setBorderPainted(false);

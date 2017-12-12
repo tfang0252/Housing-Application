@@ -64,8 +64,8 @@ public class AccountScreen extends MainScreen{
 		
 		userIDLabel = new JLabel("User ID:");
 		userIDLabel.setFont(new Font("Arial", 15, 20));
-		userIDLabel.setForeground(Color.WHITE);
-		userIDLabel.setBounds(300, 185, 320, 35);
+		userIDLabel.setForeground(new Color(0, 51, 153));
+		userIDLabel.setBounds(350, 185, 320, 35);
 		
 		userID = new JTextField(currentID);
 		userID.setBounds(615, 190, 320, 25);
@@ -73,8 +73,8 @@ public class AccountScreen extends MainScreen{
 		
 		PWLabel = new JLabel("Password:");
 		PWLabel.setFont(new Font("Arial", 15, 20));
-		PWLabel.setForeground(Color.WHITE);
-		PWLabel.setBounds(300, 225, 320, 35);
+		PWLabel.setForeground(new Color(0, 51, 153));
+		PWLabel.setBounds(350, 225, 320, 35);
 		
 		PW = new JPasswordField();
 		PW.setBounds(615, 230, 320, 25);
@@ -82,8 +82,8 @@ public class AccountScreen extends MainScreen{
 		
 		fNameFieldLabel = new JLabel("First Name:");
 		fNameFieldLabel.setFont(new Font("Arial", 15, 20));
-		fNameFieldLabel.setForeground(Color.WHITE);
-		fNameFieldLabel.setBounds(300, 265, 320, 35);
+		fNameFieldLabel.setForeground(new Color(0, 51, 153));
+		fNameFieldLabel.setBounds(350, 265, 320, 35);
 		
 		fNameField = new JTextField();	
 		fNameField.setBounds(615, 270, 320, 25);
@@ -91,8 +91,8 @@ public class AccountScreen extends MainScreen{
 		
 		rNameFieldLabel = new JLabel("Last Name:");
 		rNameFieldLabel.setFont(new Font("Arial", 15, 20));
-		rNameFieldLabel.setForeground(Color.WHITE);
-		rNameFieldLabel.setBounds(300, 305, 320, 35);
+		rNameFieldLabel.setForeground(new Color(0, 51, 153));
+		rNameFieldLabel.setBounds(350, 305, 320, 35);
 		
 		rNameField = new JTextField();
 		rNameField.setBounds(615, 310, 320, 25);
@@ -100,8 +100,8 @@ public class AccountScreen extends MainScreen{
 		
 		DOBLabel = new JLabel("Date of Birth:");
 		DOBLabel.setFont(new Font("Arial", 15, 20));
-		DOBLabel.setForeground(Color.WHITE);
-		DOBLabel.setBounds(300, 345, 320, 35);
+		DOBLabel.setForeground(new Color(0, 51, 153));
+		DOBLabel.setBounds(350, 345, 320, 35);
 		
 		DOB = new JTextField();
 		DOB.setBounds(615, 350, 320, 25);
@@ -109,8 +109,8 @@ public class AccountScreen extends MainScreen{
 		
 		gradYearLabel = new JLabel("Graduation Year:");
 		gradYearLabel.setFont(new Font("Arial", 15, 20));
-		gradYearLabel.setForeground(Color.WHITE);
-		gradYearLabel.setBounds(300, 385, 320, 35);
+		gradYearLabel.setForeground(new Color(0, 51, 153));
+		gradYearLabel.setBounds(350, 385, 320, 35);
 		
 		gradYear = new JTextField();
 		gradYear.setBounds(615, 390, 320, 25);
@@ -121,8 +121,8 @@ public class AccountScreen extends MainScreen{
 		
 		genderLabel = new JLabel("Gender:");
 		genderLabel.setFont(new Font("Arial", 15, 20));
-		genderLabel.setForeground(Color.WHITE);
-		genderLabel.setBounds(300, 425, 320, 35);
+		genderLabel.setForeground(new Color(0, 51, 153));
+		genderLabel.setBounds(350, 425, 320, 35);
 				
 		female = new JCheckBox("Female");
 		female.setBounds(745, 430, 100, 25);
@@ -130,8 +130,8 @@ public class AccountScreen extends MainScreen{
 		
 		dormLabel = new JLabel("Dorm:");
 		dormLabel.setFont(new Font("Arial", 15, 20));
-		dormLabel.setForeground(Color.WHITE);
-		dormLabel.setBounds(300, 465, 320, 35);
+		dormLabel.setForeground(new Color(0, 51, 153));
+		dormLabel.setBounds(350, 465, 320, 35);
 		
 		dorm = new JComboBox<String>();
 		dorm.setBounds(615, 470, 170, 25);
@@ -178,7 +178,7 @@ public class AccountScreen extends MainScreen{
 		
 		blueBackground = new JLabel("");
 		blueBackground.setBounds(-30, -0, 1034, 683);
-		blueBackground.setIcon(new ImageIcon("Images/BlueBG.png"));
+		blueBackground.setIcon(new ImageIcon("Images/BlueBG2.jpg"));
 		this.add(blueBackground);
 		
 		readFile();

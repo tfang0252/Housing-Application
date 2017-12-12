@@ -256,17 +256,8 @@ public class LoginScreen extends AppWindowPanel{
 		
 		JLabel logo = new JLabel("");
 
-		logo.setIcon(new ImageIcon("Images/eagleLogo.png"));
-		logo.setBounds(700, -100, 1034, 683);
-
 		logo.setIcon(new ImageIcon("Images/Eagle.png"));
-		logo.setBounds(620, -95, 1034, 683);
-
-		logo.setIcon(new ImageIcon("Images/Eagle.png"));
-		logo.setBounds(710, -110, 1034, 683);
-
-		logo.setIcon(new ImageIcon("Images/eagleLogo.png"));
-		logo.setBounds(700, -80, 1034, 683);
+		logo.setBounds(615, -90, 1034, 683);
 
 		this.add(logo);
 

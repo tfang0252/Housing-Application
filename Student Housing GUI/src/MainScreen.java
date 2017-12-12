@@ -37,16 +37,16 @@ public class MainScreen extends AppWindowPanel{
 		this.add(home);
 	//	System.out.println(string);
 		
-		eagleLogo = new JLabel("");
-		eagleLogo.setIcon(new ImageIcon("Images/Logo_2.png"));
-		eagleLogo.setBounds(60, -222, 1034, 683);
-		this.add(eagleLogo);
-		
 
 		back = new JLabel("");
 		back.setIcon(new ImageIcon("Images/Return.png"));
 		back.setBounds(70, -15, 100, 100);
 		this.add(back);
+		
+		eagleLogo = new JLabel("");
+		eagleLogo.setIcon(new ImageIcon("Images/eagleLogo.png"));
+		eagleLogo.setBounds(70, -233, 1034, 683);
+		this.add(eagleLogo);
 		
 		pPhoto = new JLabel("");
 		pPhoto.setIcon(new ImageIcon("Images/pPhoto.png"));
