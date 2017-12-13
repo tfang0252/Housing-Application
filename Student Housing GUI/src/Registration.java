@@ -163,7 +163,7 @@ public class Registration extends MainScreen{
 					}
 					currentStudent = new Student(userID.getText(), PW.getText(),
 							fNameField.getText(), rNameField.getText(), DOB.getText(),
-							Integer.valueOf(gradYear.getText()), gend, dorm.getSelectedItem().toString());
+							gradYear.getText(), gend, dorm.getSelectedItem().toString());
 					createStudentFile(currentStudent);
 					JOptionPane.showMessageDialog(window, "Registration Complete!");
 					window.getContentPane().removeAll();

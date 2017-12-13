@@ -1,10 +1,8 @@
-/AppWindow$1.class
-/AppWindow.class
-/AppWindowPanel.class
-/ApplicationScreen.class
 /Date.class
 /Events.class
 /EventsPage.class
+/GMapsAPI$1.class
+/GMapsAPI.class
 /LocationPage.class
 /LoginScreen$1.class
 /LoginScreen$2.class
@@ -21,6 +19,8 @@
 /RegPage.class
 /Registration$1.class
 /Registration.class
+/RequestPage$1.class
+/RequestPage.class
 /Student.class
 /StudentHousing$1.class
 /StudentHousing$2.class
@@ -32,6 +32,3 @@
 /StudentHousing.class
 /WebPage.class
 /faqPage.class
-/com/
-/GMapsAPI.class
-/GMapsAPI$1.class

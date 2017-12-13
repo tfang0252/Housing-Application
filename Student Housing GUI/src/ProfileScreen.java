@@ -22,16 +22,20 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import java.util.Date;
 
 
 public class ProfileScreen extends MainScreen{
+	
+	Date now = new Date();
+	private int year = now.getYear();
 	
 	private JTextField userID;
 	private JPasswordField PW;
 	private JTextField fNameField;
 	private JTextField rNameField;
 	private JTextField gradYear;
-	private JTextField DOB;
+	private JLabel DOB;
 	private JCheckBox male;
 	private JCheckBox female;
 	private JComboBox<String> race;
@@ -50,6 +54,8 @@ public class ProfileScreen extends MainScreen{
 	private JLabel profile;
 	private JLabel profileBorder;
 	private JLabel profileP;
+	private JLabel ageLabel;
+	
 
 
 	
@@ -69,10 +75,15 @@ public class ProfileScreen extends MainScreen{
 				fNameFieldLabel = new JLabel(tempStud.getFirstName());
 				rNameFieldLabel = new JLabel(tempStud.getLastName());
 				//PW.setText(tempStud.getPW());
-				//DOB.setText(tempStud.getDOB());
-				//gradYear.setText(String.valueOf(tempStud.getGradYear()));
-				String gender = tempStud.getGender();
-				
+				DOB = new JLabel(tempStud.getDOB());
+				String age = tempStud.getDOB().substring(tempStud.getDOB().length()-4);
+				System.out.print(age);
+				int ageInt = 2017 - Integer.parseInt(age);
+				System.out.print("ageInt:" + ageInt);
+				ageLabel= new JLabel(Integer.toString(ageInt));
+				gradYearLabel = new JLabel(tempStud.getGradYear());
+				genderLabel = new JLabel(tempStud.getGender());
+				dormLabel = new JLabel(tempStud.getDorm());
 			}
 			
 		}
@@ -83,21 +94,36 @@ public class ProfileScreen extends MainScreen{
 		fNameFieldLabel.setFont(new Font("Arial Black", Font.BOLD, 20));
 		add(fNameFieldLabel);
 		
-		rNameFieldLabel.setBounds(640,150,100,30);
+		rNameFieldLabel.setBounds(625,150,200,30);
 		rNameFieldLabel.setFont(new Font("Arial Black", Font.BOLD, 20));
 		add(rNameFieldLabel);
 		
 		
 		profileP = new JLabel("");
 		profileP.setBounds(350,70,150, 150);
-		profileP.setIcon(new ImageIcon("Images/pPhoto.png"));
+		profileP.setIcon(new ImageIcon("Images/profilePic.jpg"));
 		add(profileP);
 		
+		dormLabel.setBounds(610,515,250,40);
+		dormLabel.setFont(new Font("Arial Black", Font.BOLD, 20));
+		add(dormLabel);
 		
 		
+		ageLabel.setBounds(610,360,180,40);
+		ageLabel.setFont(new Font("Arial Black", Font.BOLD, 20));
+		add(ageLabel);
 		
+		DOB.setBounds(610,230,180,40);
+		DOB.setFont(new Font("Arial Black", Font.BOLD, 20));
+		add(DOB);
 		
+		genderLabel.setBounds(610,295,180,40);
+		genderLabel.setFont(new Font("Arial Black", Font.BOLD, 20));
+		add(genderLabel);
 		
+		gradYearLabel.setBounds(610,440,180,40);
+		gradYearLabel.setFont(new Font("Arial Black", Font.BOLD, 20));
+		add(gradYearLabel);
 		
 		profileBorder = new JLabel("");
 		profileBorder.setBounds(300,0,1034, 683);
@@ -133,7 +159,7 @@ public class ProfileScreen extends MainScreen{
 				String tempFName = uData.nextToken();
 				String tempLName = uData.nextToken();
 				String tempDOB = uData.nextToken();
-				int tempGradYear = Integer.valueOf(uData.nextToken());
+				String tempGradYear = uData.nextToken();
 				String tempGender = uData.nextToken();
 				String tempDorm = uData.nextToken();
 				Student tempStud = new Student(tempUser,tempPW,tempFName,tempLName,

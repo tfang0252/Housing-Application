@@ -16,7 +16,6 @@ public class MainScreen extends AppWindowPanel{
 	protected JLabel profile;
 	protected JLabel account;
 	protected JLabel events;
-	protected JLabel dormDir;
 	protected JLabel locations;
 	protected JLabel faq;
 	protected JLabel logout;
@@ -28,6 +27,7 @@ public class MainScreen extends AppWindowPanel{
 	protected JLabel back; 
 	protected JLabel home;
 	protected JLabel eagleLogo;
+	protected JLabel requests;
 
 	public MainScreen(JFrame window){
 
@@ -69,20 +69,22 @@ public class MainScreen extends AppWindowPanel{
 		events.setIcon(new ImageIcon("Images/Events.png"));
 		this.add(events);
 		
-		dormDir = new JLabel("");
-		dormDir.setBounds(45, 60, 1034, 683);
-		dormDir.setIcon(new ImageIcon("Images/DormDir.png"));
-		this.add(dormDir);
 		
 		locations = new JLabel("");
-		locations.setBounds(45, 120, 1034, 683);
+		locations.setBounds(45, 60, 1034, 683);
 		locations.setIcon(new ImageIcon("Images/Locations.png"));
 		this.add(locations);
 		
 		faq = new JLabel("");
-		faq.setBounds(45, 180, 1034, 683);
+		faq.setBounds(45, 120, 1034, 683);
 		faq.setIcon(new ImageIcon("Images/FAQ.png"));
 		this.add(faq);
+		
+		requests = new JLabel("");
+		requests.setBounds(26, 203, 1034, 683);
+		requests.setIcon(new ImageIcon("Images/Maintenance Button.png"));
+		this.add(requests);
+		
 		
 		logout = new JLabel("");
 		logout.setBounds(45, 270, 1034, 683);
@@ -103,7 +105,7 @@ public class MainScreen extends AppWindowPanel{
 		BwhiteBox = new JLabel("");
 		BwhiteBox.setBounds(260, 70, 1050, 683);
 		BwhiteBox.setIcon(new ImageIcon("Images/BWhiteBox.png"));
-		this.add(BwhiteBox);
+		//this.add(BwhiteBox);
 		
 		blueBackground = new JLabel("");
 		blueBackground.setBounds(-30, -0, 1034, 683);
@@ -144,14 +146,6 @@ public class MainScreen extends AppWindowPanel{
 					revalidate();
 				}
 				if((e.getX()>25 && e.getX()<225) && (e.getY()>405 && e.getY()<455)){
-					dormDir.setIcon(new ImageIcon("Images/DormDirH.png"));
-					revalidate();
-				}
-				else{
-					dormDir.setIcon(new ImageIcon("Images/DormDir.png"));
-					revalidate();
-				}
-				if((e.getX()>20 && e.getX()<235) && (e.getY()>465 && e.getY()<510)){
 					locations.setIcon(new ImageIcon("Images/LocationsH.png"));
 					revalidate();
 				}
@@ -159,12 +153,23 @@ public class MainScreen extends AppWindowPanel{
 					locations.setIcon(new ImageIcon("Images/Locations.png"));
 					revalidate();
 				}
-				if((e.getX()>50 && e.getX()<234) && (e.getY()>533 && e.getY()<572)){
+				if((e.getX()>20 && e.getX()<235) && (e.getY()>465 && e.getY()<510)){
 					faq.setIcon(new ImageIcon("Images/FAQH.png"));
 					revalidate();
 				}
 				else{
 					faq.setIcon(new ImageIcon("Images/FAQ.png"));
+					revalidate();
+				}
+				
+				if((e.getX()>39 && e.getX()<254) && (e.getY()>549 && e.getY()<610)){
+					requests.setIcon(new ImageIcon("Images/requestGlow.png"));
+					requests.setBounds(14, 203, 1034, 683);
+					revalidate();
+				}
+				else{
+					requests.setIcon(new ImageIcon("Images/Maintenance Button.png"));
+					requests.setBounds(26, 203, 1034, 683);
 					revalidate();
 				}
 				if((e.getX()>65 && e.getX()<175) && (e.getY()>620 && e.getY()<660)){
@@ -241,14 +246,14 @@ public class MainScreen extends AppWindowPanel{
 				if((e.getX()>50 && e.getX()<195) && (e.getY()>350 && e.getY()<395)){
 					
 					window.getContentPane().removeAll();
-					window.getContentPane().add(new EventsPage(window));
+					window.getContentPane().add(new Events(window));
 					window.pack();
 					window.getContentPane().setVisible(true);
 				}
 				
-				if((e.getX()>50 && e.getX()<234) && (e.getY()>533 && e.getY()<572)){
+				if((e.getX()>39 && e.getX()<254) && (e.getY()>549 && e.getY()<610)){
 					window.getContentPane().removeAll();
-					window.getContentPane().add(new faqPage(window));
+					window.getContentPane().add(new RequestPage(window));
 					window.pack();
 					window.getContentPane().setVisible(true);
 					
@@ -256,10 +261,16 @@ public class MainScreen extends AppWindowPanel{
 			//this adds the location page
 				if((e.getX()>20 && e.getX()<235) && (e.getY()>465 && e.getY()<510)){
 					window.getContentPane().removeAll();
-					window.getContentPane().add(new LocationPage(window));
+					window.getContentPane().add(new faqPage(window));
 					window.pack();
 					window.getContentPane().setVisible(true);
 				}	
+				if((e.getX()>25 && e.getX()<225) && (e.getY()>405 && e.getY()<455)){
+					window.getContentPane().removeAll();
+					window.getContentPane().add(new LocationPage(window));
+					window.pack();
+					window.getContentPane().setVisible(true);
+				}
 				
 			}
 

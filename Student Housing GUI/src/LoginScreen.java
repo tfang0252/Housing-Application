@@ -35,6 +35,9 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.StringTokenizer;
 import java.awt.event.ActionEvent;
+ 
+
+
 
 /**Class extends AppWindow with preset frame
  * size and layout, and can be modified to add to add
@@ -43,10 +46,16 @@ import java.awt.event.ActionEvent;
 public class LoginScreen extends AppWindowPanel{
 	private JTextField SID;
 	private JPasswordField PW;
-
+//user data found 
 	private boolean userFound;
 	private boolean pwFound;
+	
+//admin data found
+	private boolean adminFound; 
+	private boolean pwAdminFound;
+	
 	public LoginScreen(JFrame window) {
+		
 		JLabel back = new JLabel("");
 		back.setIcon(new ImageIcon("Images/Return.png"));
 		back.setBounds(2, -20, 100, 100);
@@ -164,7 +173,14 @@ public class LoginScreen extends AppWindowPanel{
 					Set set = userList.entrySet();
 					Iterator iterator = set.iterator();
 					while(iterator.hasNext()) {
-						Map.Entry entry = (Map.Entry)iterator.next();					
+						Map.Entry entry = (Map.Entry)iterator.next();	
+						
+						if(SID.getText().equals("1")&&PW.getText().equals("1")) {
+							adminFound = true; 
+							//currentID = SID.getText();
+							pwAdminFound = true;
+						}
+						
 						if(SID.getText().equals(entry.getKey())){
 							userFound = true;
 							currentID = SID.getText();
@@ -172,9 +188,17 @@ public class LoginScreen extends AppWindowPanel{
 						if(PW.getText().equals(entry.getValue())){
 							pwFound = true;
 						} 
+						
 				      }
 					
-					if(!userFound){
+					if(adminFound && pwAdminFound) {
+						
+						window.getContentPane().removeAll();
+						window.getContentPane().add(new AdminPage(window));
+						window.pack();
+						window.getContentPane().setVisible(true);	
+					}	
+					else if((!userFound)&& !(adminFound && pwAdminFound)){
 						
 						int option = JOptionPane.showConfirmDialog(window,
 								"User not found. Would you like to register?");
@@ -184,14 +208,11 @@ public class LoginScreen extends AppWindowPanel{
 							window.pack();
 							window.getContentPane().setVisible(true);
 						}
-						else{
-							
-						}
 					}
-					else if(userFound && !pwFound){
+					else if(userFound && !pwFound && !(adminFound && pwAdminFound)){
 						JOptionPane.showMessageDialog(window, "Password is invalid");	
 					}
-					else if(userFound && pwFound){
+					else if(userFound && pwFound && !(adminFound && pwAdminFound)){
 						window.getContentPane().removeAll();
 						window.getContentPane().add(new MainScreen(window));
 						window.pack();
@@ -278,7 +299,6 @@ public class LoginScreen extends AppWindowPanel{
 		
 		JButton confirm = new JButton("Login");
 		
-		
 		confirm.setFont(new Font("Arial Black", Font.PLAIN, 16));
 		confirm.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0){		
@@ -293,10 +313,18 @@ public class LoginScreen extends AppWindowPanel{
 					}
 					if(PW.getText().equals(entry.getValue())){
 						pwFound = true;
-					} 
-			      }
-				
-				if(!userFound){
+					}
+					
+				}
+		      
+				if(adminFound && pwAdminFound) {
+					
+					window.getContentPane().removeAll();
+					window.getContentPane().add(new AdminPage(window));
+					window.pack();
+					window.getContentPane().setVisible(true);	
+				}
+				else if(!userFound && !(adminFound && pwAdminFound)){
 					
 					int option = JOptionPane.showConfirmDialog(window,
 							"User not found. Would you like to register?");
@@ -310,10 +338,10 @@ public class LoginScreen extends AppWindowPanel{
 						
 					}
 				}
-				else if(userFound && !pwFound){
+				else if(userFound && !pwFound && !(adminFound && pwAdminFound)){
 					JOptionPane.showMessageDialog(window, "Password is invalid");	
 				}
-				else if(userFound && pwFound){
+				else if(userFound && pwFound && !(adminFound && pwAdminFound)){
 					window.getContentPane().removeAll();
 					window.getContentPane().add(new MainScreen(window));
 					window.pack();

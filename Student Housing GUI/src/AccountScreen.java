@@ -216,7 +216,7 @@ public class AccountScreen extends MainScreen{
 				String tempFName = uData.nextToken();
 				String tempLName = uData.nextToken();
 				String tempDOB = uData.nextToken();
-				int tempGradYear = Integer.valueOf(uData.nextToken());
+				String tempGradYear = uData.nextToken();
 				String tempGender = uData.nextToken();
 				String tempDorm = uData.nextToken();
 				Student tempStud = new Student(tempUser,tempPW,tempFName,tempLName,

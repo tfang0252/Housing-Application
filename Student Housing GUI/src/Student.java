@@ -5,14 +5,14 @@ public class Student {
 	private String userID;
 	private String PW;
 	private String gender;
-	private int gradYear;
+	private String gradYear;
 	private Date DOB;
 	private String dBirth;
 	private String address;
 	private String dorm;
 	
 	public Student(String user, String pw, String fName, String lName, 
-			String dob, int gradY, String gend, String dor){
+			String dob, String gradY, String gend, String dor){
 		firstName = fName;
 		lastName = lName;
 		dBirth = dob;
@@ -34,7 +34,7 @@ public class Student {
 	public String getGender(){
 		return gender;
 	}
-	public int getGradYear(){
+	public String getGradYear(){
 		return gradYear;
 	}
 	public String getDOB(){
