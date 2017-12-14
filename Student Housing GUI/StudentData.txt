@@ -1,9 +1,7 @@
-1234567890:password:tony:fang:8/28/1997:2019:Male:North Lake Village
-420:123:henry:loser:9/11/1920:2100:Male:North Lake Village
-1:1:user:user:1/1/1111:1111:Male:North Lake Village
-6969:12345:Donald:Trump:11/12/2005:12345:Male:North Lake Village
-98765:pass:tony:fang:8/28/1997:2019:Male:North Lake Village
-254315678:password123:Jon :Snow:1980:2080:Male:North Lake Village
-987654321:password:Luke:Skywalker:8/20/1990:2029:Male:South Lake Village
-87654321:password:Anakin:Skywalker:8/9/1970:2020:Male:South Lake Village
-54321:pass:Han:Solo:9/15/1960:2020:Male:South Lake Village
+987654321;password2;Han;Solo;1/2/1970;2090;Female;South Lake Village;https://i.imgur.com/MSbe4Ks.png
+test1;test;test;test1;2/8/1993;2050;Female;North Lake Village;https://i.imgur.com/onPu7o8.jpg
+test1;test;test;test;7/7/1192;2034;Male;North Lake Village;https://i.imgur.com/onPu7o8.jpg
+test2;test;test2;test2;1/1/1111;2080;Male;North Lake Village;https://i.imgur.com/onPu7o8.jpg
+test3;test3;test3;test3;8/9/1972;2090;Male;North Lake Village;https://i.imgur.com/onPu7o8.jpg
+test4;test4;test4;testing;8/28/1997;2075;Male;North Lake Village;https://i.imgur.com/onPu7o8.jpg
+test5;test5;test;test5555;8/8/1970;2070;Male;North Lake Village;https://i.imgur.com/onPu7o8.jpg

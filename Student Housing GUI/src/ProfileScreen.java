@@ -1,11 +1,15 @@
+
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.net.URL;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.NoSuchElementException;
@@ -13,6 +17,7 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.StringTokenizer;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -55,8 +60,8 @@ public class ProfileScreen extends MainScreen{
 	private JLabel profileBorder;
 	private JLabel profileP;
 	private JLabel ageLabel;
-	
-
+	private JLabel  profilePicBorder;
+	private String imageURL;
 
 	
 	public ProfileScreen(JFrame window){
@@ -75,58 +80,80 @@ public class ProfileScreen extends MainScreen{
 				fNameFieldLabel = new JLabel(tempStud.getFirstName());
 				rNameFieldLabel = new JLabel(tempStud.getLastName());
 				//PW.setText(tempStud.getPW());
-				DOB = new JLabel(tempStud.getDOB());
+				DOB = new JLabel("Date of Birth: "+tempStud.getDOB());
 				String age = tempStud.getDOB().substring(tempStud.getDOB().length()-4);
 				System.out.print(age);
 				int ageInt = 2017 - Integer.parseInt(age);
 				System.out.print("ageInt:" + ageInt);
-				ageLabel= new JLabel(Integer.toString(ageInt));
-				gradYearLabel = new JLabel(tempStud.getGradYear());
-				genderLabel = new JLabel(tempStud.getGender());
-				dormLabel = new JLabel(tempStud.getDorm());
+				ageLabel= new JLabel("Age: " + Integer.toString(ageInt));
+				gradYearLabel = new JLabel("Graduation Year: " + tempStud.getGradYear());
+				genderLabel = new JLabel("Gender: " + tempStud.getGender());
+				dormLabel = new JLabel("Dorm: " + tempStud.getDorm());
+				imageURL = tempStud.getURL();
 			}
 			
 		}
 		
 		revalidate();
 		
-		fNameFieldLabel.setBounds(550,150,100,30);
-		fNameFieldLabel.setFont(new Font("Arial Black", Font.BOLD, 20));
+		fNameFieldLabel.setBounds(480,100,200,30);
+		fNameFieldLabel.setFont(new Font("Segoe UI", Font.BOLD, 23));
 		add(fNameFieldLabel);
 		
-		rNameFieldLabel.setBounds(625,150,200,30);
-		rNameFieldLabel.setFont(new Font("Arial Black", Font.BOLD, 20));
+		rNameFieldLabel.setBounds(480,130,200,30);
+		rNameFieldLabel.setFont(new Font("Segoe UI", Font.BOLD, 23));
 		add(rNameFieldLabel);
 		
 		
 		profileP = new JLabel("");
-		profileP.setBounds(350,70,150, 150);
-		profileP.setIcon(new ImageIcon("Images/profilePic.jpg"));
-		add(profileP);
+		profileP.setBounds(295,90,150, 150);
 		
-		dormLabel.setBounds(610,515,250,40);
-		dormLabel.setFont(new Font("Arial Black", Font.BOLD, 20));
+		
+		
+		
+		 try {
+             String path = imageURL;
+             System.out.println("Get Image from " + path);
+             URL url = new URL(path);
+             BufferedImage image = ImageIO.read(url);
+             System.out.println("Load image into frame...");
+             profileP.setIcon(new ImageIcon(image));
+             revalidate();
+             
+         } catch (Exception exp) {
+             exp.printStackTrace();
+         }
+		 add(profileP);
+		 
+		 
+		 profilePicBorder = new JLabel("");
+		 profilePicBorder.setIcon(new ImageIcon("Images/profilePicBorder.png"));
+		 profilePicBorder.setBounds(292,88,155,155);
+		 add(profilePicBorder);
+		 
+		dormLabel.setBounds(295,555,250,40);
+		dormLabel.setFont(new Font("Segoe UI", Font.PLAIN, 20));
 		add(dormLabel);
 		
 		
-		ageLabel.setBounds(610,360,180,40);
-		ageLabel.setFont(new Font("Arial Black", Font.BOLD, 20));
+		ageLabel.setBounds(295,400,250,40);
+		ageLabel.setFont(new Font("Segoe UI", Font.PLAIN, 20));
 		add(ageLabel);
 		
-		DOB.setBounds(610,230,180,40);
-		DOB.setFont(new Font("Arial Black", Font.BOLD, 20));
+		DOB.setBounds(295,260,250,40);
+		DOB.setFont(new Font("Segoe UI", Font.PLAIN, 20));
 		add(DOB);
 		
-		genderLabel.setBounds(610,295,180,40);
-		genderLabel.setFont(new Font("Arial Black", Font.BOLD, 20));
+		genderLabel.setBounds(295,335,250,40);
+		genderLabel.setFont(new Font("Segoe UI", Font.PLAIN, 20));
 		add(genderLabel);
 		
-		gradYearLabel.setBounds(610,440,180,40);
-		gradYearLabel.setFont(new Font("Arial Black", Font.BOLD, 20));
+		gradYearLabel.setBounds(295,480,250,40);
+		gradYearLabel.setFont(new Font("Segoe UI",Font.PLAIN, 20));
 		add(gradYearLabel);
 		
 		profileBorder = new JLabel("");
-		profileBorder.setBounds(300,0,1034, 683);
+		profileBorder.setBounds(270, 70, 715, 580);
 		profileBorder.setIcon(new ImageIcon("Images/profileBorder.png"));
 		add(profileBorder);
 		
@@ -153,7 +180,7 @@ public class ProfileScreen extends MainScreen{
 		}
 		try{
 			while((line=input.nextLine())!=null){			
-				uData= new StringTokenizer(line, ":");
+				uData= new StringTokenizer(line, ";");
 				String tempUser = uData.nextToken();
 				String tempPW = uData.nextToken();
 				String tempFName = uData.nextToken();
@@ -162,8 +189,9 @@ public class ProfileScreen extends MainScreen{
 				String tempGradYear = uData.nextToken();
 				String tempGender = uData.nextToken();
 				String tempDorm = uData.nextToken();
+				String temptURL = uData.nextToken();
 				Student tempStud = new Student(tempUser,tempPW,tempFName,tempLName,
-						tempDOB,tempGradYear,tempGender,tempDorm);
+						tempDOB,tempGradYear,tempGender,tempDorm,temptURL);
 				studentData.put(tempUser, tempStud);					
 			}			
 		}

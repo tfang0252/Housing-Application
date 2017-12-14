@@ -175,19 +175,20 @@ public class LoginScreen extends AppWindowPanel{
 					while(iterator.hasNext()) {
 						Map.Entry entry = (Map.Entry)iterator.next();	
 						
-						if(SID.getText().equals("1")&&PW.getText().equals("1")) {
+						if(SID.getText().equals("Admin")&&PW.getText().equals("Password")) {
 							adminFound = true; 
 							//currentID = SID.getText();
 							pwAdminFound = true;
-						}
+						}else {
 						
-						if(SID.getText().equals(entry.getKey())){
-							userFound = true;
-							currentID = SID.getText();
+							if(SID.getText().equals(entry.getKey())){
+								userFound = true;
+								currentID = SID.getText();
+							}
+							if(PW.getText().equals(entry.getValue())){
+								pwFound = true;
+							} 
 						}
-						if(PW.getText().equals(entry.getValue())){
-							pwFound = true;
-						} 
 						
 				      }
 					
@@ -306,25 +307,33 @@ public class LoginScreen extends AppWindowPanel{
 				Set set = userList.entrySet();
 				Iterator iterator = set.iterator();
 				while(iterator.hasNext()) {
-					Map.Entry entry = (Map.Entry)iterator.next();					
-					if(SID.getText().equals(entry.getKey())){
-						userFound = true;
-						currentID = SID.getText();
-					}
-					if(PW.getText().equals(entry.getValue())){
-						pwFound = true;
+					Map.Entry entry = (Map.Entry)iterator.next();	
+					
+					if(SID.getText().equals("Admin")&&PW.getText().equals("Password")) {
+						adminFound = true; 
+						//currentID = SID.getText();
+						pwAdminFound = true;
+					}else {
+					
+						if(SID.getText().equals(entry.getKey())){
+							userFound = true;
+							currentID = SID.getText();
+						}
+						if(PW.getText().equals(entry.getValue())){
+							pwFound = true;
+						} 
 					}
 					
-				}
-		      
+			      }
+				
 				if(adminFound && pwAdminFound) {
 					
 					window.getContentPane().removeAll();
 					window.getContentPane().add(new AdminPage(window));
 					window.pack();
 					window.getContentPane().setVisible(true);	
-				}
-				else if(!userFound && !(adminFound && pwAdminFound)){
+				}	
+				else if((!userFound)&& !(adminFound && pwAdminFound)){
 					
 					int option = JOptionPane.showConfirmDialog(window,
 							"User not found. Would you like to register?");
@@ -333,9 +342,6 @@ public class LoginScreen extends AppWindowPanel{
 						window.getContentPane().add(new Registration(window));
 						window.pack();
 						window.getContentPane().setVisible(true);
-					}
-					else{
-						
 					}
 				}
 				else if(userFound && !pwFound && !(adminFound && pwAdminFound)){
@@ -347,6 +353,7 @@ public class LoginScreen extends AppWindowPanel{
 					window.pack();
 					window.getContentPane().setVisible(true);	
 				}
+
 			}
 		});
 		

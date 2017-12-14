@@ -14,7 +14,7 @@ public class AppWindowPanel extends JPanel{
 	protected HashMap <String,String> userList=new HashMap<String,String>();
 	protected HashMap <String, Student> studentData =new HashMap<String, Student>();
 	protected Scanner input;
-	protected Student currentStudent;
+	protected static Student currentStudent;
 	protected static String currentID;
 	public AppWindowPanel(){
 		setLayout(null);

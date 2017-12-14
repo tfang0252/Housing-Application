@@ -1,10 +1,4 @@
 
-/*
- * Copyright (c) 2000-2017 TeamDev Ltd. All rights reserved.
- * Use is subject to Apache 2.0 license terms.
- */
-      
-
 
 import com.teamdev.jxmaps.Map;
 import com.teamdev.jxmaps.MapOptions;
@@ -17,12 +11,7 @@ import com.teamdev.jxmaps.swing.MapView;
 import javax.swing.*;
 import java.awt.*;
 
-/**
-* This example demonstrates how to create a MapView instance,
-* display it in JFrame and open a simple map.
-*
-* @author Vitaly Eremenko
-*/
+
   
 public class GMapsAPI extends MapView {
     public GMapsAPI() {

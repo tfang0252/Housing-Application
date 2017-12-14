@@ -10,9 +10,10 @@ public class Student {
 	private String dBirth;
 	private String address;
 	private String dorm;
+	private String imageURL;
 	
 	public Student(String user, String pw, String fName, String lName, 
-			String dob, String gradY, String gend, String dor){
+			String dob, String gradY, String gend, String dor, String url){
 		firstName = fName;
 		lastName = lName;
 		dBirth = dob;
@@ -21,6 +22,7 @@ public class Student {
 		gradYear = gradY;
 		gender = gend;
 		dorm = dor;
+		imageURL = url;
 	}
 	public String getPW(){
 		return PW;
@@ -43,9 +45,12 @@ public class Student {
 	public String getDorm(){
 		return dorm;
 	}
+	public String getURL() {
+		return imageURL;
+	}
 	public String toString(){
 		String studInfo = firstName + " " + lastName + "\n" + 
-				dBirth + "\n" + gender +"\n"+ gradYear+"\n"+dorm;	
+				dBirth + "\n" + gender +"\n"+ gradYear+"\n"+dorm + "\n" + imageURL;	
 		return studInfo;
 	}
 }

@@ -1,3 +1,7 @@
+
+
+
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -48,6 +52,8 @@ public class AccountScreen extends MainScreen{
 	private JLabel raceLabel;
 	private JLabel dormLabel;
 	private JLabel profile;
+	private JLabel imageURL;
+	private JTextField urlField;
 
 
 	
@@ -68,7 +74,7 @@ public class AccountScreen extends MainScreen{
 		userIDLabel.setBounds(300, 185, 320, 35);
 		
 		userID = new JTextField(currentID);
-		userID.setBounds(615, 190, 320, 25);
+		userID.setBounds(630, 190, 320, 25);
 		
 		
 		PWLabel = new JLabel("Password:");
@@ -77,7 +83,7 @@ public class AccountScreen extends MainScreen{
 		PWLabel.setBounds(300, 225, 320, 35);
 		
 		PW = new JPasswordField();
-		PW.setBounds(615, 230, 320, 25);
+		PW.setBounds(630, 230, 320, 25);
 		
 		
 		fNameFieldLabel = new JLabel("First Name:");
@@ -86,7 +92,7 @@ public class AccountScreen extends MainScreen{
 		fNameFieldLabel.setBounds(300, 265, 320, 35);
 		
 		fNameField = new JTextField();	
-		fNameField.setBounds(615, 270, 320, 25);
+		fNameField.setBounds(630, 270, 320, 25);
 		
 		
 		rNameFieldLabel = new JLabel("Last Name:");
@@ -95,7 +101,7 @@ public class AccountScreen extends MainScreen{
 		rNameFieldLabel.setBounds(300, 305, 320, 35);
 		
 		rNameField = new JTextField();
-		rNameField.setBounds(615, 310, 320, 25);
+		rNameField.setBounds(630, 310, 320, 25);
 		
 		
 		DOBLabel = new JLabel("Date of Birth:");
@@ -104,7 +110,7 @@ public class AccountScreen extends MainScreen{
 		DOBLabel.setBounds(300, 345, 320, 35);
 		
 		DOB = new JTextField();
-		DOB.setBounds(615, 350, 320, 25);
+		DOB.setBounds(630, 350, 320, 25);
 		
 		
 		gradYearLabel = new JLabel("Graduation Year:");
@@ -113,11 +119,11 @@ public class AccountScreen extends MainScreen{
 		gradYearLabel.setBounds(300, 385, 320, 35);
 		
 		gradYear = new JTextField();
-		gradYear.setBounds(615, 390, 320, 25);
+		gradYear.setBounds(630, 390, 320, 25);
 		
 		
 		male = new JCheckBox("Male");
-		male.setBounds(615, 430, 100, 25);
+		male.setBounds(630, 430, 100, 25);
 		
 		genderLabel = new JLabel("Gender:");
 		genderLabel.setFont(new Font("Arial", 15, 20));
@@ -133,8 +139,14 @@ public class AccountScreen extends MainScreen{
 		dormLabel.setForeground(Color.WHITE);
 		dormLabel.setBounds(300, 465, 320, 35);
 		
+		imageURL = new JLabel("Profile Picture URL (150x150):");
+		imageURL.setFont(new Font("Arial", 15, 20));
+		imageURL.setForeground(Color.WHITE);
+		imageURL.setBounds(300, 505, 320, 35);
+		
+		
 		dorm = new JComboBox<String>();
-		dorm.setBounds(615, 470, 170, 25);
+		dorm.setBounds(630, 470, 170, 25);
 		dorm.addItem("North Lake Village");
 		dorm.addItem("South Lake Village");
 		dorm.addItem("West Lake Village");
@@ -143,32 +155,9 @@ public class AccountScreen extends MainScreen{
 		confirm.setBounds(862, 622, 100, 25);		
 		
 		
+		urlField = new JTextField();
+		urlField.setBounds(630,505,320,25);
 		
-		
-		add(profile);
-		add(userID);
-		add(userIDLabel);
-		add(PW);
-		add(PWLabel);
-		add(fNameField);
-		add(fNameFieldLabel);
-		add(rNameField);
-		add(rNameFieldLabel);
-		add(DOB);
-		add(DOBLabel);
-		add(gradYear);
-		add(gradYearLabel);
-		add(male);
-		add(female);
-		add(genderLabel);
-		add(dorm);
-		add(dormLabel);
-		add(confirm);
-		
-		blueBackground = new JLabel("");
-		blueBackground.setBounds(-30, -0, 1034, 683);
-		blueBackground.setIcon(new ImageIcon("Images/BlueBG.png"));
-		this.add(blueBackground);
 		
 		readFile();
 		Set set = studentData.entrySet();
@@ -190,9 +179,41 @@ public class AccountScreen extends MainScreen{
 					female.setSelected(true);
 				}
 				dorm.setSelectedItem(tempStud.getDorm());
+				urlField.setText(tempStud.getURL());
 			}
 			
 		}
+		
+		
+		
+		add(urlField);
+		add(profile);
+		add(userID);
+		add(userIDLabel);
+		add(PW);
+		add(PWLabel);
+		add(fNameField);
+		add(fNameFieldLabel);
+		add(rNameField);
+		add(rNameFieldLabel);
+		add(DOB);
+		add(DOBLabel);
+		add(gradYear);
+		add(gradYearLabel);
+		add(male);
+		add(female);
+		add(genderLabel);
+		add(dorm);
+		add(dormLabel);
+		add(confirm);
+		add(imageURL);
+		
+		blueBackground = new JLabel("");
+		blueBackground.setBounds(-30, -0, 1034, 683);
+		blueBackground.setIcon(new ImageIcon("Images/BlueBG.png"));
+		this.add(blueBackground);
+		
+
 		
 		revalidate();
 	}
@@ -210,7 +231,7 @@ public class AccountScreen extends MainScreen{
 		}
 		try{
 			while((line=input.nextLine())!=null){			
-				uData= new StringTokenizer(line, ":");
+				uData= new StringTokenizer(line, ";");
 				String tempUser = uData.nextToken();
 				String tempPW = uData.nextToken();
 				String tempFName = uData.nextToken();
@@ -219,8 +240,9 @@ public class AccountScreen extends MainScreen{
 				String tempGradYear = uData.nextToken();
 				String tempGender = uData.nextToken();
 				String tempDorm = uData.nextToken();
+				String tempURL = uData.nextToken();
 				Student tempStud = new Student(tempUser,tempPW,tempFName,tempLName,
-						tempDOB,tempGradYear,tempGender,tempDorm);
+						tempDOB,tempGradYear,tempGender,tempDorm,tempURL);
 				studentData.put(tempUser, tempStud);					
 			}			
 		}

@@ -1,3 +1,4 @@
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -34,6 +35,7 @@ public class Registration extends MainScreen{
 	private JTextField fNameField;
 	private JTextField rNameField;
 	private JTextField gradYear;
+	private JTextField imageURL;
 	private JTextField DOB;
 	private JCheckBox male;
 	private JCheckBox female;
@@ -51,6 +53,7 @@ public class Registration extends MainScreen{
 	private JLabel raceLabel;
 	private JLabel dormLabel;
 	private JLabel registration;
+	private JLabel imageLabel;
 
 
 	
@@ -142,8 +145,19 @@ public class Registration extends MainScreen{
 		dorm.addItem("South Lake Village");
 		dorm.addItem("West Lake Village");
 		
+		imageLabel = new JLabel("User Image URL:");
+		imageLabel.setFont(new Font("Arial", 15, 20));
+		imageLabel.setForeground(Color.BLACK);
+		imageLabel.setBounds(350,505,320,35);
+		add(imageLabel);
+		
+		imageURL = new JTextField();
+		imageURL.setBounds(545,509,320,25);
+		add(imageURL);
+		
+		
 		confirm = new JButton("Register");
-		confirm.setBounds(350, 525, 100, 25);
+		confirm.setBounds(350, 550, 100, 25);
 		confirm.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				if(userID.getText().equals("")){
@@ -163,7 +177,7 @@ public class Registration extends MainScreen{
 					}
 					currentStudent = new Student(userID.getText(), PW.getText(),
 							fNameField.getText(), rNameField.getText(), DOB.getText(),
-							gradYear.getText(), gend, dorm.getSelectedItem().toString());
+							gradYear.getText(), gend, dorm.getSelectedItem().toString(),imageURL.getText());
 					createStudentFile(currentStudent);
 					JOptionPane.showMessageDialog(window, "Registration Complete!");
 					window.getContentPane().removeAll();
@@ -225,10 +239,11 @@ public class Registration extends MainScreen{
 			FileWriter fw = new FileWriter("StudentData.txt", true);
 			writer = new BufferedWriter(fw);
 			PrintWriter output = new PrintWriter(writer);
-			output.print(userID.getText()+":"+PW.getText()+":"+
-					fNameField.getText()+":"+ rNameField.getText() +":"+ DOB.getText()+":"+ 
-					Integer.valueOf(gradYear.getText())+":"+gend+":"+
-					dorm.getSelectedItem().toString());
+			output.print(userID.getText()+";"+PW.getText()+";"+
+					fNameField.getText()+";"+ rNameField.getText() +";"+ DOB.getText()+";"+ 
+					Integer.valueOf(gradYear.getText())+";"+gend+";"+
+					dorm.getSelectedItem().toString() + ";"
+					+ imageURL.getText());
 			output.println();			
 			writer.close();
 		}
@@ -237,3 +252,4 @@ public class Registration extends MainScreen{
 		}
 	}
 }
+

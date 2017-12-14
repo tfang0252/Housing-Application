@@ -28,6 +28,7 @@ public class MainScreen extends AppWindowPanel{
 	protected JLabel home;
 	protected JLabel eagleLogo;
 	protected JLabel requests;
+	protected JLabel directory;
 
 	public MainScreen(JFrame window){
 
@@ -48,46 +49,47 @@ public class MainScreen extends AppWindowPanel{
 		back.setBounds(70, -15, 100, 100);
 		this.add(back);
 		
-		pPhoto = new JLabel("");
-		pPhoto.setIcon(new ImageIcon("Images/pPhoto.png"));
-		pPhoto.setBounds(75, -215, 1034, 683);
-		//this.add(pPhoto);
+		directory = new JLabel("");
+		directory.setIcon(new ImageIcon("Images/DormDir.png"));
+		directory.setBounds(45,470,180,100);
+		//this.add(directory);
+		
 		
 		
 		profile = new JLabel("");
 		profile.setIcon(new ImageIcon("Images/Profile.png"));
-		profile.setBounds(45, -120, 1034, 683);
+		profile.setBounds(45,170, 180, 100);
 		this.add(profile);
 		
 		account = new JLabel("");
-		account.setBounds(45, -60, 1034, 683);
+		account.setBounds(45, 230, 180,100);
 		account.setIcon(new ImageIcon("Images/Account.png"));
 		this.add(account);
 		
 		events = new JLabel("");
-		events.setBounds(45, 0, 1034, 683);
+		events.setBounds(45, 290, 180,100);
 		events.setIcon(new ImageIcon("Images/Events.png"));
 		this.add(events);
 		
 		
 		locations = new JLabel("");
-		locations.setBounds(45, 60, 1034, 683);
+		locations.setBounds(45, 350, 180,100);
 		locations.setIcon(new ImageIcon("Images/Locations.png"));
 		this.add(locations);
 		
 		faq = new JLabel("");
-		faq.setBounds(45, 120, 1034, 683);
+		faq.setBounds(45, 410,180,100);
 		faq.setIcon(new ImageIcon("Images/FAQ.png"));
 		this.add(faq);
 		
 		requests = new JLabel("");
-		requests.setBounds(26, 203, 1034, 683);
+		requests.setBounds(750, 0, 220, 80);
 		requests.setIcon(new ImageIcon("Images/Maintenance Button.png"));
 		this.add(requests);
 		
 		
 		logout = new JLabel("");
-		logout.setBounds(45, 270, 1034, 683);
+		logout.setBounds(45, 570,180,100);
 		logout.setIcon(new ImageIcon("Images/logout.png"));
 		
 		this.add(logout);
@@ -110,180 +112,42 @@ public class MainScreen extends AppWindowPanel{
 		blueBackground = new JLabel("");
 		blueBackground.setBounds(-30, -0, 1034, 683);
 
-		blueBackground.setIcon(new ImageIcon("Images/BlueBG3.png"));
 
-		blueBackground.setIcon(new ImageIcon("Images/BlueBG2.png"));
+		//blueBackground.setIcon(new ImageIcon("Images/BlueBG3.png"));
 
-		blueBackground.setIcon(new ImageIcon("Images/BlueBG.png"));
+		//blueBackground.setIcon(new ImageIcon("Images/BlueBG2.png"));
+
+		//blueBackground.setIcon(new ImageIcon("Images/BlueBG.png"));
 
 		blueBackground.setIcon(new ImageIcon("Images/BlueBG3.png"));
 
 		this.add(blueBackground);
+
+		this.add(blueBackground);
 		
-		window.addMouseMotionListener(new MouseMotionAdapter(){
-			public void mouseMoved(MouseEvent e) {
-				if((e.getX()>50 && e.getX()<231) && (e.getY()>225 && e.getY()<270)){
-					profile.setIcon(new ImageIcon("Images/ProfileH.png"));
-					revalidate();
-				}
-				else{
-					profile.setIcon(new ImageIcon("Images/Profile.png"));
-				}
-				if((e.getX()>35 && e.getX()<233) && (e.getY()>290 && e.getY()<334)){
-					account.setIcon(new ImageIcon("Images/AccountH.png"));
-					revalidate();
-				}
-				else{
-					account.setIcon(new ImageIcon("Images/Account.png"));
-					revalidate();
-				}
-				if((e.getX()>50 && e.getX()<233) && (e.getY()>350 && e.getY()<395)){
-					events.setIcon(new ImageIcon("Images/EventsH.png"));
-					revalidate();
-				}
-				else{
-					events.setIcon(new ImageIcon("Images/Events.png"));
-					revalidate();
-				}
-				if((e.getX()>25 && e.getX()<225) && (e.getY()>405 && e.getY()<455)){
-					locations.setIcon(new ImageIcon("Images/LocationsH.png"));
-					revalidate();
-				}
-				else{
-					locations.setIcon(new ImageIcon("Images/Locations.png"));
-					revalidate();
-				}
-				if((e.getX()>20 && e.getX()<235) && (e.getY()>465 && e.getY()<510)){
-					faq.setIcon(new ImageIcon("Images/FAQH.png"));
-					revalidate();
-				}
-				else{
-					faq.setIcon(new ImageIcon("Images/FAQ.png"));
-					revalidate();
-				}
-				
-				if((e.getX()>39 && e.getX()<254) && (e.getY()>549 && e.getY()<610)){
-					requests.setIcon(new ImageIcon("Images/requestGlow.png"));
-					requests.setBounds(14, 203, 1034, 683);
-					revalidate();
-				}
-				else{
-					requests.setIcon(new ImageIcon("Images/Maintenance Button.png"));
-					requests.setBounds(26, 203, 1034, 683);
-					revalidate();
-				}
-				if((e.getX()>65 && e.getX()<175) && (e.getY()>620 && e.getY()<660)){
-					logout.setIcon(new ImageIcon("Images/LogoutH.png"));
-					revalidate();
-				}
-				else{
-					logout.setIcon(new ImageIcon("Images/Logout.png"));
-					revalidate();
-				}
-				if((e.getX()>0 &&e.getX()<54)&&(e.getY()>25 && e.getY()<72)){
-					home.setIcon(new ImageIcon("Images/HomeB.png"));
-					revalidate();
-				}
-				else{
-					home.setIcon(new ImageIcon("Images/Home.png"));
-					revalidate();
-				}
-				if((e.getX()>75&&e.getX()<135) && (e.getY()>27 && e.getY()<85)){
-					back.setIcon(new ImageIcon("Images/ReturnB.png"));
-					revalidate();
-				}
-				else{
-					back.setIcon(new ImageIcon("Images/Return.png"));
-					revalidate();
-				}
-			}
-		});	
+
 		
-		//this is where additional JPanel classes should be instantiated
-		//depending on the range clicked by the user.
-		window.addMouseListener(new MouseListener(){
+		
+		profile.addMouseListener(new MouseListener(){
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				
-				System.out.println(e.getX() +","+ e.getY());
-				//home button click
-				if((e.getX()>65 && e.getX()<175) && (e.getY()>620 && e.getY()<645)){
-					window.getContentPane().removeAll();
-					window.getContentPane().add(new StudentHousing(window));
-					window.pack();
-					window.getContentPane().setVisible(true);
-				}
-				//back button click
-				if((e.getX()>74&&e.getX()<125) && (e.getY()>37 && e.getY()<81)){
-					window.getContentPane().removeAll();
-					window.getContentPane().add(new LoginScreen(window));
-					window.pack();
-					window.getContentPane().setVisible(true);
-				}
-				//logout button click
-				if((e.getX()>0 &&e.getX()<60)&&(e.getY()>24 && e.getY()<70)){
-					window.getContentPane().removeAll();
-					window.getContentPane().add(new StudentHousing(window));
-					window.pack();
-					window.getContentPane().setVisible(true);
-				}
-				//Profile button click
-				if((e.getX()>50 && e.getX()<231) && (e.getY()>225 && e.getY()<270)){
-					
-					window.getContentPane().removeAll();
-					window.getContentPane().add(new ProfileScreen(window));
-					window.pack();
-					window.getContentPane().setVisible(true);
-				}
-				if((e.getX()>35 && e.getX()<233) && (e.getY()>290 && e.getY()<334)){
-					
-					window.getContentPane().removeAll();
-					window.getContentPane().add(new AccountScreen(window));
-					window.pack();
-					window.getContentPane().setVisible(true);
-				}
-				//goes to event page on click
-				if((e.getX()>50 && e.getX()<195) && (e.getY()>350 && e.getY()<395)){
-					
-					window.getContentPane().removeAll();
-					window.getContentPane().add(new Events(window));
-					window.pack();
-					window.getContentPane().setVisible(true);
-				}
-				
-				if((e.getX()>39 && e.getX()<254) && (e.getY()>549 && e.getY()<610)){
-					window.getContentPane().removeAll();
-					window.getContentPane().add(new RequestPage(window));
-					window.pack();
-					window.getContentPane().setVisible(true);
-					
-				}
-			//this adds the location page
-				if((e.getX()>20 && e.getX()<235) && (e.getY()>465 && e.getY()<510)){
-					window.getContentPane().removeAll();
-					window.getContentPane().add(new faqPage(window));
-					window.pack();
-					window.getContentPane().setVisible(true);
-				}	
-				if((e.getX()>25 && e.getX()<225) && (e.getY()>405 && e.getY()<455)){
-					window.getContentPane().removeAll();
-					window.getContentPane().add(new LocationPage(window));
-					window.pack();
-					window.getContentPane().setVisible(true);
-				}
-				
+				window.getContentPane().removeAll();
+				window.getContentPane().add(new ProfileScreen(window));
+				window.pack();
+				window.getContentPane().setVisible(true);				
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
+				profile.setIcon(new ImageIcon("Images/ProfileH.png"));
+				revalidate();
 			}
+			
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
+				profile.setIcon(new ImageIcon("Images/Profile.png"));
+				revalidate();
 			}
 
 			@Override
@@ -297,6 +161,367 @@ public class MainScreen extends AppWindowPanel{
 				// TODO Auto-generated method stub
 				
 			}
+			
+		});
+		
+		account.addMouseListener(new MouseListener(){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				window.getContentPane().removeAll();
+				window.getContentPane().add(new AccountScreen(window));
+				window.pack();
+				window.getContentPane().setVisible(true);				
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				account.setIcon(new ImageIcon("Images/AccountH.png"));
+				revalidate();
+			}
+			
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				account.setIcon(new ImageIcon("Images/Account.png"));
+				revalidate();
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
+		
+		events.addMouseListener(new MouseListener(){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				window.getContentPane().removeAll();
+				window.getContentPane().add(new Events(window));
+				window.pack();
+				window.getContentPane().setVisible(true);		
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				events.setIcon(new ImageIcon("Images/EventsH.png"));
+				revalidate();
+			}
+			
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				events.setIcon(new ImageIcon("Images/Events.png"));
+				revalidate();
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
+		
+		locations.addMouseListener(new MouseListener(){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				window.getContentPane().removeAll();
+				window.getContentPane().add(new LocationPage(window));
+				window.pack();
+				window.getContentPane().setVisible(true);		
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				locations.setIcon(new ImageIcon("Images/LocationsH.png"));
+				revalidate();
+			}
+			
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				locations.setIcon(new ImageIcon("Images/Locations.png"));
+				revalidate();
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
+		
+		faq.addMouseListener(new MouseListener(){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				window.getContentPane().removeAll();
+				window.getContentPane().add(new faqPage(window));
+				window.pack();
+				window.getContentPane().setVisible(true);		
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				faq.setIcon(new ImageIcon("Images/FAQH.png"));
+				revalidate();
+			}
+			
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				faq.setIcon(new ImageIcon("Images/FAQ.png"));
+				revalidate();
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
+		
+		logout.addMouseListener(new MouseListener(){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				window.getContentPane().removeAll();
+				window.getContentPane().add(new StudentHousing(window));
+				window.pack();
+				window.getContentPane().setVisible(true);
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				logout.setIcon(new ImageIcon("Images/LogoutH.png"));
+				revalidate();
+			}
+			
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				logout.setIcon(new ImageIcon("Images/Logout.png"));
+				revalidate();
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
+		
+		home.addMouseListener(new MouseListener(){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				window.getContentPane().removeAll();
+				window.getContentPane().add(new StudentHousing(window));
+				window.pack();
+				window.getContentPane().setVisible(true);
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				home.setIcon(new ImageIcon("Images/HomeB.png"));
+				revalidate();
+			}
+			
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				home.setIcon(new ImageIcon("Images/Home.png"));
+				revalidate();
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
+		
+		requests.addMouseListener(new MouseListener(){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				window.getContentPane().removeAll();
+				window.getContentPane().add(new RequestPage(window));
+				window.pack();
+				window.getContentPane().setVisible(true);
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				requests.setIcon(new ImageIcon("Images/requestGlow.png"));
+				requests.setBounds(742, 0, 245, 80);
+				revalidate();
+			}
+			
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				requests.setIcon(new ImageIcon("Images/Maintenance Button.png"));
+				requests.setBounds(750, 0, 220, 80);
+				revalidate();
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
+		
+		back.addMouseListener(new MouseListener(){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				window.getContentPane().removeAll();
+				window.getContentPane().add(new LoginScreen(window));
+				window.pack();
+				window.getContentPane().setVisible(true);
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				back.setIcon(new ImageIcon("Images/ReturnB.png"));
+				revalidate();
+			}
+			
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				back.setIcon(new ImageIcon("Images/Return.png"));
+				revalidate();
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
+		
+		
+		directory.addMouseListener(new MouseListener(){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				window.getContentPane().removeAll();
+				window.getContentPane().add(new DirScreen(window));
+				window.pack();
+				window.getContentPane().setVisible(true);
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				directory.setIcon(new ImageIcon("Images/DormDirH.png"));
+			}
+			
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				directory.setIcon(new ImageIcon("Images/DormDir.png"));
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
+		
+		window.addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				System.out.println("X:" + e.getX() + "  Y:" + e.getY());
+				
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+		
 			
 		});
 	

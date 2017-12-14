@@ -1,19 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="Images"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="lib" path="jgoodies-forms-1.8.0.jar" sourcepath="jgoodies-forms-1.8.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tony Fang/Documents/GitHub/Housing-Application-V2/Housing-Application/Student Housing GUI/jxbrowser-6.17.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tony Fang/Documents/GitHub/Housing-Application-V2/Housing-Application/Student Housing GUI/jxbrowser-linux64-6.17.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tony Fang/Documents/GitHub/Housing-Application-V2/Housing-Application/Student Housing GUI/jxbrowser-mac-6.17.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tony Fang/Documents/GitHub/Housing-Application-V2/Housing-Application/Student Housing GUI/jxbrowser-win32-6.17.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tony Fang/Documents/GitHub/Housing-Application-V2/Housing-Application/Student Housing GUI/jxmaps-1.3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tony Fang/Documents/GitHub/Housing-Application-V2/Housing-Application/Student Housing GUI/jxmaps-linux32-1.3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tony Fang/Documents/GitHub/Housing-Application-V2/Housing-Application/Student Housing GUI/jxmaps-linux64-1.3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tony Fang/Documents/GitHub/Housing-Application-V2/Housing-Application/Student Housing GUI/jxmaps-mac-1.3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tony Fang/Documents/GitHub/Housing-Application-V2/Housing-Application/Student Housing GUI/jxmaps-win-1.3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tony Fang/Documents/GitHub/Housing-Application-V2/Housing-Application/Student Housing GUI/BrowserLicense.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tony Fang/Documents/GitHub/Housing-Application-V2/Housing-Application/Student Housing GUI/MapLicense.jar"/>
+	<classpathentry kind="lib" path="BrowserLicense.jar"/>
+	<classpathentry kind="lib" path="commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="commons-io-2.6.jar"/>
+	<classpathentry kind="lib" path="commons-lang3-3.7.jar"/>
+	<classpathentry kind="lib" path="commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="commons-net-3.6.jar"/>
+	<classpathentry kind="lib" path="commons-text-1.1.jar"/>
+	<classpathentry kind="lib" path="cssparser-0.9.24.jar"/>
+	<classpathentry kind="lib" path="htmlunit-2.28.jar"/>
+	<classpathentry kind="lib" path="htmlunit-core-js-2.28.jar"/>
+	<classpathentry kind="lib" path="httpclient-4.5.3.jar"/>
+	<classpathentry kind="lib" path="httpcore-4.4.6.jar"/>
+	<classpathentry kind="lib" path="httpmime-4.5.3.jar"/>
+	<classpathentry kind="lib" path="jetty-client-9.4.7.v20170914.jar"/>
+	<classpathentry kind="lib" path="jetty-http-9.4.7.v20170914.jar"/>
+	<classpathentry kind="lib" path="jetty-io-9.4.7.v20170914.jar"/>
+	<classpathentry kind="lib" path="jetty-util-9.4.7.v20170914.jar"/>
+	<classpathentry kind="lib" path="jetty-xml-9.4.7.v20170914.jar"/>
+	<classpathentry kind="lib" path="jgoodies-forms-1.8.0-sources.jar"/>
+	<classpathentry kind="lib" path="jgoodies-forms-1.8.0.jar"/>
+	<classpathentry kind="lib" path="jxbrowser-6.17.jar"/>
+	<classpathentry kind="lib" path="jxbrowser-linux64-6.17.jar"/>
+	<classpathentry kind="lib" path="jxbrowser-mac-6.17.jar"/>
+	<classpathentry kind="lib" path="jxbrowser-win32-6.17.jar"/>
+	<classpathentry kind="lib" path="jxmaps-1.3.1.jar"/>
+	<classpathentry kind="lib" path="jxmaps-linux32-1.3.1.jar"/>
+	<classpathentry kind="lib" path="jxmaps-linux64-1.3.1.jar"/>
+	<classpathentry kind="lib" path="jxmaps-mac-1.3.1.jar"/>
+	<classpathentry kind="lib" path="jxmaps-win-1.3.1.jar"/>
+	<classpathentry kind="lib" path="MapLicense.jar"/>
+	<classpathentry kind="lib" path="neko-htmlunit-2.28.jar"/>
+	<classpathentry kind="lib" path="sac-1.3.jar"/>
+	<classpathentry kind="lib" path="serializer-2.7.2.jar"/>
+	<classpathentry kind="lib" path="websocket-api-9.4.7.v20170914.jar"/>
+	<classpathentry kind="lib" path="websocket-client-9.4.7.v20170914.jar"/>
+	<classpathentry kind="lib" path="websocket-common-9.4.7.v20170914.jar"/>
+	<classpathentry kind="lib" path="xalan-2.7.2.jar"/>
+	<classpathentry kind="lib" path="xercesImpl-2.11.0.jar"/>
+	<classpathentry kind="lib" path="xml-apis-1.4.01.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

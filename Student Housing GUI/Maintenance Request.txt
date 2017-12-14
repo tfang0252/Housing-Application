@@ -1,6 +1,9 @@
-6969:house is gone:someone stole my house
-6969:house is back:i found my house again
-420:house sucks:i hate everyone
-420:house sucks:i hate everyone
-54321:house broke:someone stole house
-1:House burned down:My house is on fire!
+462372531:3 (Urgent):Cant find house:Someone stole my house.
+368828010:2:Having existential crisis.:I need an adult.
+12345789:1(Minor issue):sink borken:cat in my sink.
+123456789:1(Minor issue):door missing: my door is gone. 
+123456789:3 (Urgent):Door is broken:Hand is stuck in door.
+test1:2:test:testtestsetest
+123456789:3 (Urgent):lost my cat:My cat fell in the sink
+123456789:3 (Urgent):Door broken:Hand got stuck in it
+test5:1(Minor issue):house is on fire:forest fire 
